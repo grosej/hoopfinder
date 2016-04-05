@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Hoop Finder  |  About</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/cssabout.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jsabout.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="header" class="row">
+			<div id="title" class="col-sm-10">
+				<h1>Hoop Finder - About<br />
+				<small>Organized Pickup Basketball.</small></h1>
+			</div>
+  			<div id="nav" class="dropdown col-sm-2">
+  				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
+  				<span class="caret"></span></button>
+  				<ul id="menulist" class="dropdown-menu">
+  					<li><a href="login.html">Welcome</a></li>
+    				<li><a href="about.html">About</a></li>
+    				<li><a href="#">Admin Login</a></li>
+  				</ul>
+			</div>
+		</div>
+		<div id="body" class="row">
+			<div id="sidemenu" class="btn-group-vertical col-sm-3">
+  				<button id="aboutbutton" type="button" class="btn">About Us</button>
+  				<button id="newsbutton" type="button" class="btn">Basketball News</button>
+  				<button id="contactbutton" type="button" class="btn">Contact Us</button>
+			</div>
+			<div id="aboutcontainer" class="container">
+			<div id="aboutdiv" class="col-sm-8">
+				
+			</div>
+			<div id="newsdiv" class="col-sm-8">
+				
+			</div>
+			<div id="contactdiv" class="col-sm-8">
+				<h3 class="text-center">Contact</h3>
+  				<p class="text-center"><em>Questions? Feedback? Send us a note!</em></p>
+    			<div id="contactinfo" class="col-sm-4">
+      				<p><span class="glyphicon glyphicon-map-marker"></span>Chestnut Hill, US</p>
+      				<p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1 2032161168</p>
+      				<p><span class="glyphicon glyphicon-envelope"></span>Email: contact@hoopfinder.com</p> 
+    			</div>
+    			<div id="contactform" class="col-sm-8">
+      				<div class="row">
+        				<div class="col-sm-6 form-group">
+          					<input class="form-control" id="contactname" name="name" placeholder="Enter Name" type="text" required>
+        				</div>
+        				<div class="col-sm-6 form-group">
+          					<input class="form-control" id="contactemail" name="email" placeholder="Enter Email" type="email" required>
+        				</div>
+      				</div>
+      				<textarea class="form-control" id="contactcomments" name="comments" placeholder="Enter Comment Here" rows="5"></textarea>
+        			<div id="contactsubmit" class="col-sm-12 form-group">
+          				<button id="contactsubmitbtn" class="btn btn-danger pull-right" type="submit">Send</button>
+        			</div>
+    			</div>
+    			<div id="googleMap"></div>
+			</div>
+			</div> <!-- .container -->
+		</div>
+		<div id="footer" class="row">
+			<div id="footermain" class="col-sm-12">
+				<p>&copy; Copyright 2016</p>
+			</div>
+		</div>
+	</div> <!-- .container -->
+</body>
+</html>

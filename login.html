@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Hoop Finder  |  Welcome</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/csslogin.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jslogin.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="header" class="row">
+			<div id="title" class="col-sm-10">
+				<h1>Welcome to Hoop Finder<br />
+				<small>Organized Pickup Basketball.</small></h1>
+			</div>
+  			<div id="nav" class="dropdown col-sm-2">
+  				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
+  				<span class="caret"></span></button>
+  				<ul id="menulist" class="dropdown-menu">
+    				<li><a href="login.html">Welcome</a></li>
+    				<li><a href="about.html">About</a></li>
+    				<li><a href="#">Admin Login</a></li>
+  				</ul>
+			</div>
+		</div>
+		<div id="body" class="row">
+			<div id="myCarousel" class="carousel slide col-sm-8" data-ride="carousel">
+  				<!-- Indicators -->
+  				<ol class="carousel-indicators">
+    				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    				<li data-target="#myCarousel" data-slide-to="1"></li>
+    				<li data-target="#myCarousel" data-slide-to="2"></li>
+    				<li data-target="#myCarousel" data-slide-to="3"></li>
+  				</ol>
+
+  				<!-- Wrapper for slides -->
+  				<div class="carousel-inner" role="listbox">
+    				<div id="loginpic1" class="item active">
+      				<img src="images/basketballsunrise.jpg" alt="Sunrise Basketball">
+      				<div class="carousel-caption">
+        				<h3>Search for Courts</h3>
+        				<p>Find your ideal basketball court at a location near you.</p>
+      				</div>
+    				</div>
+
+    				<div id="loginpic2" class="item">
+      				<img src="images/basketballpickup.jpg" alt="Jump Ball">
+      				<div id="caption2" class="carousel-caption">
+        				<h3>Schedule Games Online</h3>
+        				<p>Create games to connect with players of your skill level.</p>
+      				</div>
+    				</div>
+
+    				<div id="loginpic3" class="item">
+      				<img src="images/basketballlayup.jpg" alt="Pickup Basketball">
+      				<div id="caption3" class="carousel-caption">
+        				<h3>Efficient Pickup</h3>
+        				<p>Show up, play ball, and have a good time.</p>
+      				</div>
+    				</div>
+
+    				<div id="loginpic4" class="item">
+      				<img src="images/basketballindoor.jpg" alt="Indoor Pickup Basketball">
+      				<div class="carousel-caption">
+        				<h3>Make Friends Online</h3>
+        				<p>Add players to your network of friends to invite to future games.</p>
+      				</div>
+    				</div>
+  				</div>
+  			</div>
+  			<div id="logindiv" class="form-display col-sm-4">
+				<form id="loginform" method="post" role="form">
+				<fieldset id="loginfield">
+					<p>Don't have an account? <button id="signup" type="button" class="btn btn-link">Sign up here</button></p>
+  					<div class="form-group">
+    					<label for="loginusername">Username:</label>
+    					<input type="text" class="form-control" id="loginusername" placeholder="Enter username" required>
+  					</div>
+  					<div class="form-group">
+    					<label for="loginpwd">Password:</label>
+    					<input type="password" class="form-control" id="loginpwd" placeholder="Enter password" required>
+  					</div>
+  					<button id="loginsubmit" type="submit" class="btn btn-danger pull-right">Log In</button>
+  					<br />
+  					<br />
+  					<p>Forgot your password? <button id="pwdreset" type="button" class="btn btn-link">Reset it here</button></p>
+				</fieldset>
+				</form>
+			</div>
+  			<div id="registerdiv" class="form-display col-sm-4">
+  				<form id="registerform" method="post" role="form">
+  				<fieldset id="registerfield">
+  					<p>Already have an account? <button id="signin" type="button" class="btn btn-link">Sign in</button></p>
+  					<div class="form-group">
+    					<label for="registerusername">Username:</label>
+    					<input type="text" class="form-control" id="registerusername" placeholder="Create username" required>
+  					</div>
+  					<div class="form-group">
+    					<label for="registeremail">Email:</label>
+    					<input type="email" class="form-control" id="registeremail" placeholder="Enter your email" required>
+  					</div>
+  					<div class="form-group">
+    					<label for="registerpwd">Password:</label>
+    					<input type="password" class="form-control" id="registerpwd" placeholder="Create password" required>
+  					</div>
+  					<button id="registersubmit" type="submit" class="btn btn-danger pull-right">Register</button>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+		<div id="footer" class="row">
+			<div id="footermain" class="col-sm-12">
+				<p>&copy; Copyright 2016</p>
+			</div>
+		</div>
+	</div><!-- .container -->
+</body>
+</html>

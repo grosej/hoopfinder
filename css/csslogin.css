@@ -1,0 +1,61 @@
+body { 
+  background: url(basketballcourt.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* making header fixed: */
+#header {
+	padding: 20px 0px 10px 0px;
+	position: fixed;
+	top: 0;
+	z-index: 1;
+	}
+#body {
+	padding-top: 150px;
+	}
+/* all divs in login page: */
+#title, #nav, #myCarousel, #registerdiv, #logindiv, #footermain {
+	float: left;
+	padding: 10px 20px 10px 20px;
+	}
+#title, #footermain {
+	background-color: #dddddd;
+	font-size: 125%;
+	}
+#title {
+	width: 950px;
+	}
+#footermain {
+	text-align: center;
+	padding: 10px 0px 0px 0px;
+	}
+/* dropdown menu button: */
+#menubutton {
+	width: 150px;
+	height: 102px;
+	}
+#menulist li {
+	padding: 10px;
+	font-size: 150%;
+	}
+#menulist li:hover a {
+	background-color: pink;
+	}
+/* carousel pics set to certain size: */
+#loginpic1 img, #loginpic2 img, #loginpic3 img, #loginpic4 img {
+	height: 450px;
+	width: 800px;
+	}
+/* login and register divs and fieldsets: */
+#logindiv div, #registerdiv div {
+	padding: 10px;
+	}
+#loginfield, #registerfield {
+	padding: 10px 20px 10px 20px;
+	width: 350px;
+	background-color: #dddddd;
+	opacity: 0.8;
+	}
+	
