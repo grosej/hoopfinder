@@ -100,12 +100,21 @@
     					<input type="text" class="form-control" id="registerusername" placeholder="Create username" required>
   					</div>
   					<div class="form-group">
-    					<label for="registeremail">Email:</label>
-    					<input type="email" class="form-control" id="registeremail" placeholder="Enter your email" required>
-  					</div>
-  					<div class="form-group">
     					<label for="registerpwd">Password:</label>
     					<input type="password" class="form-control" id="registerpwd" placeholder="Create password" required>
+  					</div>
+  					<div class="form-group">
+  						<label for="skilllevel">Enter Skill Level:</label>
+  						<select id="skilllevel" name="skilllevel">
+  							<option id="chooselevel" name="chooselevel" value="Choose Skill Level">Choose Skill Level</option>
+  							<option id="beginner" name = "beginner" value="Beginner">Beginner</option>
+  							<option id="intermediate" name="intermediate" value="Intermediate">Intermediate</option>
+  							<option id="advanced" name="advanced" value="Advanced">Advanced</option>
+  						</select>
+  					</div>
+  					<div class="form-group">
+    					<label for="registeremail">Email:</label>
+    					<input type="email" class="form-control" id="registeremail" placeholder="Enter your email" required>
   					</div>
   					<button id="registersubmit" type="submit" class="btn btn-danger pull-right">Register</button>
 				</fieldset>
