@@ -58,7 +58,7 @@ $(document).ready(function() {
 		var mapProp = {
 			center:myCenter,
 			zoom:12,
-			scrollwheel:false,
+			scrollwheel:true,
 			draggable:false,
 			mapTypeId:google.maps.MapTypeId.ROADMAP
 		};
