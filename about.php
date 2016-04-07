@@ -10,6 +10,15 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jsabout.js"></script>
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+	<?php
+	$options = array(
+      'http'=>array(
+        'method'=>"GET",
+        'header'=>"Accept-language: en\r\n" .
+                  "User-Agent: CSCI2254/v10.0 (http://cscilab.bc.edu/; contact.morrisht@bc.edu)"
+	) );
+	$context = stream_context_create($options);
+	?>
 </head>
 <body>
 	<div class="container">
@@ -23,7 +32,7 @@
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
   					<li><a href="login.html">Welcome</a></li>
-    				<li><a href="about.html">About</a></li>
+    				<li><a href="about.php">About</a></li>
     				<li><a href="#">Admin Login</a></li>
   				</ul>
 			</div>
@@ -39,17 +48,73 @@
 				
 			</div>
 			<div id="newsdiv" class="col-sm-8">
-				
+				<?php
+				$feeds = array(
+					'http://www.rotowire.com/rss/news.htm?sport=nba',
+					'http://www.rotowire.com/rss/news.htm?sport=cbb');
+				?>
+				<h3 class="text-center">Recent Basketball News</h3>
+				<?php
+				create_form($feeds, "feed");
+
+				if ( isset( $_GET['getfeed'] ) ) {
+					handle_form( $_GET['feed'] );
+				}
+
+				function handle_form( $myfeed ) {
+					$rss = simplexml_load_file( $myfeed );
+					$title = $rss->channel->title;
+					echo "<h3>$title</h3>";
+
+					$items = $rss->channel->item;
+					if (!$items) {
+    					$items = $rss->item;
+    				}
+
+    				foreach ( $items as $item ) {
+     					echo "<div class='news'>
+      					<h4>$item->title<h4>\n";
+        				echo '<a href="' . $item->link . '">' . $item->title . '</a><br><br>';
+        				echo $item->description . "<br><br>\n";
+        				echo "</div>";
+    				}
+				}
+
+				function create_form( $farray, $menuname ) {
+				?>
+ 				<form class="text-center" method="get" role="form">
+					<?php create_menu( $farray, $menuname ); ?>
+					<br />
+					<button type="submit" id="getfeed" name="getfeed" class="btn btn-danger pull-right">Get Feed</button>
+				</form>
+				<?php
+				}
+
+				function create_menu($farray, $menuname) {
+					$current_feed = isset( $_GET['feed'] ) ?  $_GET['feed'] : "";
+					echo "<select id='newsselect' class='form-control' name='$menuname'>";
+					echo "<option value='Choose News Feed' selected>Choose News Feed</option>";
+					foreach ( $farray as $f ) {
+						/*if ( $current_feed == $f )  {
+							echo "<option value='$f'>$f</option>";
+						} else {*/
+							echo "<option value='$f'>$f</option>";
+						//}
+					}
+					echo '</select>';
+				}
+				?>
 			</div>
 			<div id="contactdiv" class="col-sm-8">
 				<h3 class="text-center">Contact</h3>
   				<p class="text-center"><em>Questions? Feedback? Send us a note!</em></p>
     			<div id="contactinfo" class="col-sm-4">
       				<p><span class="glyphicon glyphicon-map-marker"></span>Chestnut Hill, US</p>
-      				<p><span class="glyphicon glyphicon-phone"></span>Phone: +00 1 2032161168</p>
+      				<p><span class="glyphicon glyphicon-earphone"></span>Phone: +00 1 2032161168</p>
       				<p><span class="glyphicon glyphicon-envelope"></span>Email: contact@hoopfinder.com</p> 
     			</div>
     			<div id="contactform" class="col-sm-8">
+    			<form id="contact" method="get" role="form">
       				<div class="row">
         				<div class="col-sm-6 form-group">
           					<input class="form-control" id="contactname" name="name" placeholder="Enter Name" type="text" required>
@@ -62,6 +127,7 @@
         			<div id="contactsubmit" class="col-sm-12 form-group">
           				<button id="contactsubmitbtn" class="btn btn-danger pull-right" type="submit">Send</button>
         			</div>
+        		</form>
     			</div>
     			<div id="googleMap"></div>
 			</div>

@@ -38,6 +38,10 @@ body {
 	background-color: #dddddd;
 	opacity: 0.8;
 	}
+#newsdiv {
+	height: 700px;
+	overflow-y: auto;
+	}
 #aboutcontainer {
 	padding: 10px 0px 10px 0px;
 	}
@@ -63,6 +67,12 @@ body {
 	color: black;
 	padding: 30px;
 	font-size: 150%;
+	}
+/* basketball news feed: */
+.news {
+    overflow: auto;
+    height: 300px;
+    border: 3px groove red;
 	}
 /* contact submit div & button: */
 #contactsubmit {

@@ -50,6 +50,11 @@ $(document).ready(function() {
 		$("#contactbutton").addClass("btn-primary");
 	});
 	
+	//function to keep newsdiv the active div when feed button is pressed:
+	$("#getfeed").on('click', function() {
+		window.history.go(-1);
+	});
+	
 	//coordinates to Boston College:
 	var myCenter = new google.maps.LatLng(42.339770, -71.166755);
 	
