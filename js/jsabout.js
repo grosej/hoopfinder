@@ -58,12 +58,12 @@ $(document).ready(function() {
 		var mapProp = {
 			center:myCenter,
 			zoom:12,
-			scrollwheel:true,
+			scrollwheel:false,
 			draggable:false,
 			mapTypeId:google.maps.MapTypeId.ROADMAP
 		};
 
-		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
 		var marker = new google.maps.Marker({
 			position:myCenter,
