@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Hoop Finder  |  Home</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/csslogin.css" />
+	<link rel="stylesheet" type="text/css" href="##" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jslogin.js"></script>
+	<script type="text/javascript" src="js/jsmainsession.js"></script>
 </head>
 
 
@@ -35,19 +35,47 @@
 
 		<div id="body" class="row">
 			<div id="sidemenu" class="btn-group-vertical col-sm-3">  <!-- float right -->
-  				<button id="see_friends" type="button" class="btn btn-info">Your Friends</button>
-  				<button id="previous_games" type="button" class="btn btn-info">Previous Games</button>
-  				<button id="scheduled_games" type="button" class="btn btn-info">Scheduled Games</button>
+				<button id="scheduled_gamesbtn" type="button" class="btn btn-info">Your Games</button>
+  				<button id="see_friendsbtn" type="button" class="btn btn-info">Your Friends</button>
+  				<button id="area_gamesbtn" type="button" class="btn btn-info">Area Games</button>
 			</div>
 
 			<div id="mapAPI" class="##"> <!-- float left API -->
 			</div>
 
-			<div id="games_in_area"
+			<div id="scheduled_games" class="col-sm-8">
+				<fieldset>
+					<h3>Your Scheduled Pick-up Basketball Games</h3>
+					<div id="scheduled_games_list">
+					<!--function for scheduled games unordered list-->
+					</div>
+				</fieldset>
+			</div>
+
+			<div id="see_friends" class="col-sm-8">
+				<fieldset>
+					<h3>Your Pick-up Friends</h3>
+					<div id="friends_list">
+					<!--function for friends list-->
+					</div>
+				</fieldset>
+			</div>
+
+			<div id="area_games" class="col-sm-8">
+				<fieldset>
+					<h3>Games in Your Area</h3>
+					<div id="area_games_list">
+					<!--function for area games list-->
+					</div>
+				</fieldset>
+			</div>
+
+			<div id="schedule_game_form" class="col-sm-8"> <!--bottom of page-->
+				<!--schedule game form-->
+			</div>
 
 
 		</div> <!-- body div -->
-
 
 
 
