@@ -146,8 +146,8 @@
 
 				function create_menu($farray, $menuname) {
 					$current_feed = isset( $_GET['feed'] ) ?  $_GET['feed'] : "";
-					echo "<select id='newsselect' class='form-control' name='$menuname'>";
-					echo "<option value='Choose News Feed' selected>Choose News Feed</option>";
+					echo "<select id=\"newsselect\" class=\"form-control\" name='$menuname'>";
+					echo "<option value=\"Choose News Feed\" selected>Choose News Feed</option>";
 					foreach ( $farray as $f ) {
 						if ( $current_feed == $f )  {
 							echo "<option value='$f' selected>$f</option>";
