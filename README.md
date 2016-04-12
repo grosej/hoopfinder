@@ -7,3 +7,7 @@ Team Members: Ben Morrison, Jordan Grose
 - Proposal is fine, maybe add leagues or one day tournaments with results?
 - Did not find XML, RSS assignment.
 - Did not find email assignment
+
+4/12 (Ben Morrison)
+- XML/RSS assignment is located in the about.php file
+- Email assignment soon to be inserted into about.php file
