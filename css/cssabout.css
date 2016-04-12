@@ -1,3 +1,5 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+
 body { 
   background: url(basketballcourt.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -67,6 +69,14 @@ body {
 	color: black;
 	padding: 30px;
 	font-size: 150%;
+	}
+/* about us div: */
+#basketballimage {
+	padding: 0px 0px 30px 13px;
+	}
+.logo-small {
+    color: red;
+    font-size: 50px;
 	}
 /* basketball news feed: */
 .news {

@@ -9,7 +9,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jsabout.js"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
 	<?php
 	$options = array(
       'http'=>array(
@@ -45,7 +45,61 @@
 			</div>
 			<div id="aboutcontainer" class="container">
 			<div id="aboutdiv" class="col-sm-8">
-				
+				<h2 class="text-center">About Us</h2>
+				<br />
+				<h4 class="text-center">Welcome to Hoop Finder!</h4>
+				<p>Hoop Finder is a website where people can make an account in order to 
+					play pickup basketball in a more organized fashion. After creating an account, you will have the ability 
+					to either schedule games for your friends to join, or join previously created games to play with strangers! 
+					Hoop Finder is a great way to assure that you will have enough players for a basketball game so that you 
+					don't have to waste time showing up in person. And the best part is, our services are <i>free</i>, so try it today!</p>
+				<br />
+				<img id="basketballimage" src="images/basketballcontest.jpg" alt="Contesting for Basketball">
+				<div id="valuesdiv" class="container-fluid text-center">
+  					<h2>MISSION</h2>
+  					<h4>What we bring to the table</h4>
+  					<br>
+  					<div class="row">
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-off logo-small"></span>
+      						<h4>POWER TO PLAYERS</h4>
+      						<p>Have the ability to create pickup basketball games with the click of a button.</p>
+    					</div>
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-globe logo-small"></span>
+      						<h4>TOGETHER AS ONE</h4>
+      						<p>Hoop Finder seeks to bring basketball players together from around the world to play 
+      						how they want to.</p>
+    					</div>
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-search logo-small"></span>
+      						<h4>FIND GAMES EASILY</h4>
+      						<p>Search for your desired time, and either join a previously made game, or create your 
+      						own to invite friends.</p>
+    					</div>
+    				</div>
+    				<br><br>
+  					<div class="row">
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-play logo-small"></span>
+      						<h4>PLAY WHEN YOU WANT</h4>
+      						<p>Log in, set up a game, and go play at a time that is most convenient for you. There are 
+      						no regular league commitments!</p>
+    					</div>
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-check logo-small"></span>
+      						<h4>FINISH GAMES EFFICIENTLY</h4>
+      						<p>Show up knowing enough players will be there to play a game. No more wasting time showing 
+      						up to booked courts.</p>
+    					</div>
+    					<div class="col-sm-4">
+      						<span class="glyphicon glyphicon-user logo-small"></span>
+      						<h4>FIND FRIENDS ONLINE</h4>
+      						<p>Connect with players you've previously played with to invite them to future games you 
+      						schedule. Create you're own basketball team!</p>
+    					</div>
+  					</div>
+				</div>
 			</div>
 			<div id="newsdiv" class="col-sm-8">
 				<?php
@@ -53,7 +107,7 @@
 					'http://www.rotowire.com/rss/news.htm?sport=nba',
 					'http://www.rotowire.com/rss/news.htm?sport=cbb');
 				?>
-				<h3 class="text-center">Recent Basketball News</h3>
+				<h2 class="text-center">Recent Basketball News</h2>
 				<?php
 				create_form($feeds, "feed");
 
@@ -95,23 +149,23 @@
 					echo "<select id='newsselect' class='form-control' name='$menuname'>";
 					echo "<option value='Choose News Feed' selected>Choose News Feed</option>";
 					foreach ( $farray as $f ) {
-						/*if ( $current_feed == $f )  {
+						if ( $current_feed == $f )  {
+							echo "<option value='$f' selected>$f</option>";
+						} else {
 							echo "<option value='$f'>$f</option>";
-						} else {*/
-							echo "<option value='$f'>$f</option>";
-						//}
+						}
 					}
 					echo '</select>';
 				}
 				?>
 			</div>
 			<div id="contactdiv" class="col-sm-8">
-				<h3 class="text-center">Contact</h3>
+				<h2 class="text-center">Contact</h2>
   				<p class="text-center"><em>Questions? Feedback? Send us a note!</em></p>
     			<div id="contactinfo" class="col-sm-4">
-      				<p><span class="glyphicon glyphicon-map-marker"></span>Chestnut Hill, US</p>
-      				<p><span class="glyphicon glyphicon-earphone"></span>Phone: +00 1 2032161168</p>
-      				<p><span class="glyphicon glyphicon-envelope"></span>Email: contact@hoopfinder.com</p> 
+      				<p><span class="glyphicon glyphicon-map-marker"></span> Chestnut Hill, US</p>
+      				<p><span class="glyphicon glyphicon-phone"></span> <b>Phone:</b> +00 1 2032161168</p>
+      				<p><span class="glyphicon glyphicon-envelope"></span> <b>Email:</b> contact@hoopfinder.com</p> 
     			</div>
     			<div id="contactform" class="col-sm-8">
     			<form id="contact" method="get" role="form">

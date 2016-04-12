@@ -58,8 +58,14 @@ $(document).ready(function() {
 	//coordinates to Boston College:
 	var myCenter = new google.maps.LatLng(42.339770, -71.166755);
 	
-	//function to display map:
-	function initialize() {
+	//function to display map when contactbutton is pressed:
+	$("#contactbutton").on("click", function(e) {
+        e.preventDefault();
+        var latLng = jQuery(this).attr("data-latLng");          
+        initialize(latLng);
+    });
+    
+	function initialize(latLng) {
 		var mapProp = {
 			center:myCenter,
 			zoom:12,
@@ -76,7 +82,5 @@ $(document).ready(function() {
 
 		marker.setMap(map);
 	}
-
-	google.maps.event.addDomListener(window, 'load', initialize);
 
 });
