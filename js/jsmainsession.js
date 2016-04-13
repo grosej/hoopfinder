@@ -3,6 +3,10 @@ $(document).ready(function() {
 	var $friendsDiv = $("#see_friends");
 	var $areagamesDiv = $("#area_games");
 	
+	$("#scheduled_gamesbtn").addClass("btn-primary");
+	$("#see_friendsbtn").addClass("btn-info");
+	$("#area_gamesbtn").addClass("btn-info");
+	
 	$scheduledDiv.show();
 	$friendsDiv.hide();
 	$areagamesDiv.hide();

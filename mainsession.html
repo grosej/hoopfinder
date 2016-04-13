@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Hoop Finder  |  Home</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="##" />
+	<link rel="stylesheet" type="text/css" href="css/cssmainsession.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jsmainsession.js"></script>
@@ -34,13 +34,13 @@
 
 
 		<div id="body" class="row">
-			<div id="sidemenu" class="btn-group-vertical col-sm-3">  <!-- float right -->
-				<button id="scheduled_gamesbtn" type="button" class="btn btn-info">Your Games</button>
-  				<button id="see_friendsbtn" type="button" class="btn btn-info">Your Friends</button>
-  				<button id="area_gamesbtn" type="button" class="btn btn-info">Area Games</button>
+			<div id="sidemenu" class="btn-group-vertical col-sm-3">
+				<button id="scheduled_gamesbtn" type="button" class="btn">Your Games</button>
+				<button id="area_gamesbtn" type="button" class="btn">Area Games</button>
+  				<button id="see_friendsbtn" type="button" class="btn">Your Friends</button>
 			</div>
 
-			<div id="mapAPI" class="##"> <!-- float left API -->
+			<div id="mapAPI" class="##">
 			</div>
 
 			<div id="scheduled_games" class="col-sm-8">
@@ -51,21 +51,21 @@
 					</div>
 				</fieldset>
 			</div>
+			
+			<div id="area_games" class="col-sm-8">
+				<fieldset>
+					<h3>Games in Your Area</h3>
+					<div id="area_games_list">
+					<!--function for area games list-->
+					</div>
+				</fieldset>
+			</div>
 
 			<div id="see_friends" class="col-sm-8">
 				<fieldset>
 					<h3>Your Pick-up Friends</h3>
 					<div id="friends_list">
 					<!--function for friends list-->
-					</div>
-				</fieldset>
-			</div>
-
-			<div id="area_games" class="col-sm-8">
-				<fieldset>
-					<h3>Games in Your Area</h3>
-					<div id="area_games_list">
-					<!--function for area games list-->
 					</div>
 				</fieldset>
 			</div>
