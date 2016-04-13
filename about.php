@@ -168,6 +168,17 @@
       				<p><span class="glyphicon glyphicon-envelope"></span> <b>Email:</b> contact@hoopfinder.com</p> 
     			</div>
     			<div id="contactform" class="col-sm-8">
+    			<?php
+    				display_contactform();
+    				if ( isset( $_GET['contactsubmitbtn'] ) ) {
+						handle_contactform();
+					}
+					
+					function display_contactform() {
+						$contactname = isset($_GET['name']) ? $_GET['name'] : "";
+						$contactemail = isset($_GET['email']) ? $_GET['email'] : "";
+						$contactcomments = isset($_GET['comments']) ? $_GET['comments'] : "";
+				?>
     			<form id="contact" method="get" role="form">
       				<div class="row">
         				<div class="col-sm-6 form-group">
@@ -179,9 +190,27 @@
       				</div>
       				<textarea class="form-control" id="contactcomments" name="comments" placeholder="Enter Comment Here" rows="5"></textarea>
         			<div id="contactsubmit" class="col-sm-12 form-group">
-          				<button id="contactsubmitbtn" class="btn btn-danger pull-right" type="submit">Send</button>
+          				<button id="contactsubmitbtn" name="contactsubmitbtn" class="btn btn-danger pull-right" type="submit">Send</button>
         			</div>
         		</form>
+        		<?php
+					}
+					
+					function handle_contactform(){
+						$contactname = $_GET['name'];
+						$contactemail = $_GET['email'];
+						$contactcomments = $_GET['comments'];
+						
+						$subject='Thank you for contacting Hoop Finder!';
+						$body='Dear $contactname,\n
+							Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. 
+							We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to 
+							call us at (203) 216-1168. Have a great day!';
+						$headers='From: morrisht@bc.edu';
+					
+						mail($contactemail, $subject, $body, $headers);
+					}
+    			?>
     			</div>
     			<div id="googleMap"></div>
 			</div>
