@@ -170,16 +170,16 @@
     			<div id="contactform" class="col-sm-8">
     			<?php
     				display_contactform();
-    				if ( isset( $_GET['contactsubmitbtn'] ) ) {
+    				if ( isset( $_POST['contactsubmitbtn'] ) ) {
 						handle_contactform();
 					}
 					
 					function display_contactform() {
-						$contactname = isset($_GET['name']) ? $_GET['name'] : "";
-						$contactemail = isset($_GET['email']) ? $_GET['email'] : "";
-						$contactcomments = isset($_GET['comments']) ? $_GET['comments'] : "";
+						$contactname = isset($_POST['name']) ? $_POST['name'] : "";
+						$contactemail = isset($_POST['email']) ? $_POST['email'] : "";
+						$contactcomments = isset($_POST['comments']) ? $_POST['comments'] : "";
 				?>
-    			<form id="contact" method="get" role="form">
+    			<form id="contact" method="post" role="form">
       				<div class="row">
         				<div class="col-sm-6 form-group">
           					<input class="form-control" id="contactname" name="name" placeholder="Enter Name" type="text" required>
@@ -197,20 +197,18 @@
 					}
 					
 					function handle_contactform(){
-						$contactname = $_GET['name'];
-						$contactemail = $_GET['email'];
-						$contactcomments = $_GET['comments'];
+						$contactname = $_POST['name'];
+						$contactemail = $_POST['email'];
+						$contactcomments = $_POST['comments'];
 						
-						$subject='Thank you for contacting Hoop Finder!';
-						$adminsubject='New Contact Request from \$contactname';
-						$body='Dear \$contactname,\n
-							Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. 
-							We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to 
-							call us at (203) 216-1168. Have a great day!';
-						$headers='From: morrisht@bc.edu';
-						$headersadmin='From: \$contactemail';
-					
-						if ( mail($contactemail, $subject, $body, $headers) && mail('morrisht@bc.edu', $adminsubject, $contactcomments, $headersadmin) ) {
+						$subject="Thank you for contacting Hoop Finder!";
+						$adminsubject="New contact inquiry from $contactname";
+						$body="Dear $contactname,\n Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to call us at (203) 216-1168. Have a great day!";
+						$headers="From: morrisht@bc.edu";
+						$headersadmin="From: $contactemail";
+						
+						if ( mail( $contactemail, $subject, $body, $headers) && 
+								mail('morrisht@bc.edu', $adminsubject, $contactcomments, $headersadmin) ) {
 						?>	<div id="contactsucces" class="col-sm-12 alert alert-success">
 								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
   								<strong>Success!</strong> Your contact submission has been sent. Thank you for your inquiry!
