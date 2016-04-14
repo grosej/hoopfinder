@@ -210,8 +210,17 @@
 						$headers='From: morrisht@bc.edu';
 						$headersadmin='From: \$contactemail';
 					
-						mail($contactemail, $subject, $body, $headers);
-						mail(morrisht@bc.edu, $adminsubject, $contactcomments, $headersadmin);
+						if ( mail($contactemail, $subject, $body, $headers) && mail('morrisht@bc.edu', $adminsubject, $contactcomments, $headersadmin) ) {
+						?>	<div id="contactsucces" class="col-sm-12 alert alert-success">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  								<strong>Success!</strong> Your contact submission has been sent. Thank you for your inquiry!
+							</div>
+						<?php } else {
+						?>	<div id="contacterror" class="col-sm-12 alert alert-danger">
+								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<strong>Oops!</strong> Something went wrong. Check your internet connection and please try again.
+							</div>
+						<?php }
 					}
     			?>
     			</div>
