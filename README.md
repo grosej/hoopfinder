@@ -11,3 +11,6 @@ Team Members: Ben Morrison, Jordan Grose
 4/12 (Ben Morrison)
 - XML/RSS assignment is located in the about.php file
 - Email assignment soon to be inserted into about.php file
+
+4/19 (Ben Morrison)
+- Email assignment inserted into the about.php file
