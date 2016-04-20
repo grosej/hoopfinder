@@ -10,51 +10,44 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jsmainsession.js"></script>
 </head>
-
-
 <body>
 	<div class="container">
-
-
 		<div id="header" class="row">
 			<div id="title" class="col-sm-10">
-				<h1>Welcome to Hoop Finder<br />
+				<h1>Hoop Finder - Home<br />
 				<small>Organized Pickup Basketball.</small></h1>
 			</div>
   			<div id="nav" class="dropdown col-sm-2">
   				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
-    				<li><a href="login.html">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
-    				<li><a href="##">Admin Login</a></li>
+    				<li><a href="login.html">Logout</a></li>
   				</ul>
 			</div>
 		</div>
-
-
 		<div id="body" class="row">
 			<div id="sidemenu" class="btn-group-vertical col-sm-3">
-				<button id="scheduled_gamesbtn" type="button" class="btn">Your Games</button>
+				<button id="scheduled_gamesbtn" type="button" class="btn">Scheduled Games</button>
 				<button id="area_gamesbtn" type="button" class="btn">Area Games</button>
   				<button id="see_friendsbtn" type="button" class="btn">Your Friends</button>
 			</div>
-
-			<div id="mapAPI" class="##">
+			<div id="mapcontainer" class="container">
+				<div id="mapAPI" class="col-sm-8">
+					
+				</div>
 			</div>
-
+			<div id="homecontainer" class="container">
 			<div id="scheduled_games" class="col-sm-8">
-				<fieldset>
-					<h3>Your Scheduled Pick-up Basketball Games</h3>
-					<div id="scheduled_games_list">
+				<h2 class="text-center">Your Scheduled Games</h2>
+				<div id="scheduled_games_list" class="col-sm-12">
 					<!--function for scheduled games unordered list-->
-					</div>
-				</fieldset>
+				</div>
 			</div>
 			
 			<div id="area_games" class="col-sm-8">
 				<fieldset>
-					<h3>Games in Your Area</h3>
+					<h2 class="text-center">Games in Your Area</h2>
 					<div id="area_games_list">
 					<!--function for area games list-->
 					</div>
@@ -63,32 +56,25 @@
 
 			<div id="see_friends" class="col-sm-8">
 				<fieldset>
-					<h3>Your Pick-up Friends</h3>
+					<h2 class="text-center">Your Friends</h2>
 					<div id="friends_list">
 					<!--function for friends list-->
 					</div>
 				</fieldset>
 			</div>
-
-			<div id="schedule_game_form" class="col-sm-8"> <!--bottom of page-->
-				<!--schedule game form-->
+			</div> <!-- .container -->
+			<div id="gameformcontainer" class="container">
+				<div id="schedule_game_form" class="col-sm-8">
+					<!--schedule game form-->
+				</div>
 			</div>
-
-
 		</div> <!-- body div -->
-
-
-
-
-
 		<div id="footer" class="row">
 			<div id="footermain" class="col-sm-12">
 				<p>&copy; Copyright 2016</p>
 			</div>
 		</div>
-
-
-	</div> <!-- (container) -->
+	</div> <!-- .container -->
 </body>
 </html>
 

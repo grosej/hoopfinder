@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Hoop Finder  |  Admin Login</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/cssadminlogin.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jsadminlogin.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="header" class="row">
+			<div id="title" class="col-sm-10">
+				<h1>Hoop Finder - Admin Login<br />
+				<small>Organized Pickup Basketball.</small></h1>
+			</div>
+  			<div id="nav" class="dropdown col-sm-2">
+  				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
+  				<span class="caret"></span></button>
+  				<ul id="menulist" class="dropdown-menu">
+    				<li><a href="login.html">Welcome</a></li>
+    				<li><a href="about.php">About</a></li>
+    				<li><a href="adminlogin.html">Admin Login</a></li>
+  				</ul>
+			</div>
+		</div>
+		<div id="body" class="row">
+			<div id="logindiv" class="form-display col-sm-12">
+				<form id="loginform" method="post" role="form">
+				<fieldset id="loginfield">
+					<h4 class="text-center">If you are an Admin, please login here:</h4>
+  					<div class="form-group">
+    					<label for="loginusername">Username:</label>
+    					<input type="text" class="form-control" id="loginusername" placeholder="Enter username" required>
+  					</div>
+  					<div class="form-group">
+    					<label for="loginpwd">Password:</label>
+    					<input type="password" class="form-control" id="loginpwd" placeholder="Enter password" required>
+  					</div>
+  					<button id="loginsubmit" name="loginsubmit" type="submit" class="btn btn-danger pull-right">Log In</button>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+		<div id="footer" class="row">
+			<div id="footermain" class="col-sm-12">
+				<p>&copy; Copyright 2016</p>
+			</div>
+		</div>
+	</div> <!-- .container -->
+</body>
+</html>

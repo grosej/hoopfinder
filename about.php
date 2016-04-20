@@ -33,7 +33,7 @@
   				<ul id="menulist" class="dropdown-menu">
   					<li><a href="login.html">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
-    				<li><a href="#">Admin Login</a></li>
+    				<li><a href="adminlogin.html">Admin Login</a></li>
   				</ul>
 			</div>
 		</div>

@@ -15,8 +15,8 @@ body {
 #body {
 	padding-top: 150px;
 	}
-/* all divs in mainsession page: */
-#title, #nav, #sidemenu, #footermain {
+/* all divs in login page: */
+#title, #nav, #logindiv, #footermain {
 	float: left;
 	padding: 10px 20px 10px 20px;
 	}
@@ -31,37 +31,29 @@ body {
 	text-align: center;
 	padding: 10px 0px 0px 0px;
 	}
-#mapAPI, #scheduled_games, #area_games, #see_friends, #schedule_game_form {
-	position: relative;
-	right: 30px;
-	float: right;
-	background-color: #dddddd;
-	opacity: 0.8;
-	}
-#mapcontainer, #homecontainer, #gameformcontainer {
-	padding: 10px 0px 10px 0px;
-	}
 /* dropdown menu button: */
 #menubutton {
 	width: 150px;
 	height: 102px;
 	}
 #menulist li {
-	width: 180px;
 	padding: 10px;
 	font-size: 150%;
 	}
 #menulist li:hover a {
 	background-color: pink;
 	}
-/* sidemenu & buttons: */
-#sidemenu {
-	position: fixed;
-	top: 1;
-	z-index: 1;
+/* login and register divs and fieldsets: */
+#logindiv {
+	padding-left: 340px;
 	}
-#sidemenu button {
-	color: black;
-	padding: 30px;
-	font-size: 150%;
+#logindiv div {
+	padding: 20px;
+	}
+#loginfield {
+	padding: 10px 20px 10px 20px;
+	width: 500px;
+	height: 400px;
+	background-color: #dddddd;
+	opacity: 0.8;
 	}
