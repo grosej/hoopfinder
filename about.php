@@ -111,7 +111,7 @@
 				<?php
 				create_form($feeds, "feed");
 
-				if ( isset( $_GET['getfeed'] ) ) {
+				/*if ( isset( $_GET['getfeed'] ) ) {
 					handle_form( $_GET['feed'] );
 				}
 
@@ -132,7 +132,7 @@
         				echo $item->description . "<br><br>\n";
         				echo "</div>";
     				}
-				}
+				}*/
 
 				function create_form( $farray, $menuname ) {
 				?>
