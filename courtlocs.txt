@@ -1,0 +1,50 @@
+1. Name: Conte Forum					Location: Chestnut Hill, MA 	Lat: 42.33514	Long: -71.16792
+2. Name: Rogers Park 					Location: Brighton, MA			Lat: 42.347881	Long: -71.158812
+3. Name: Coolidge Park 					Location: Brookline, MA			Lat: 42.346223 	Long: -71.131297
+4. Name: Waldstein Park 				Location: Brookline, MA			Lat: 42.336384	Long: -71.143138
+5. Name: Newton Centre Playground 		Location: Newton, MA			Lat: 42.333535	Long: -71.197025
+6. Name: Casey (WO James P.) Park 		Location: Watertown, MA			Lat: 42.362691	Long: -71.190916
+7. Name: 								Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+8. Name:  								Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+9. Name:  								Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+10. Name:  								Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+11. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+12. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+13. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+14. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+15. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+16. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+17. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+18. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+19. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+20. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+21. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+22. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+23. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+24. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+25. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+26. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+27. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+28. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+29. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+30. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+31. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+32. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+33. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+34. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+35. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+36. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+37. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+38. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+39. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+40. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+41. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+42. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+43. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+44. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+45. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+46. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+47. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+48. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+49. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
+50. Name: Conte Forum 		Location: Chestnut Hill, MA		Lat: 42.33514	Long: -71.16792
