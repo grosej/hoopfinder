@@ -111,7 +111,7 @@
 				<?php
 				create_form($feeds, "feed");
 
-				/*if ( isset( $_GET['getfeed'] ) ) {
+				if ( isset( $_GET['getfeed'] ) ) {
 					handle_form( $_GET['feed'] );
 				}
 
@@ -127,12 +127,12 @@
 
     				foreach ( $items as $item ) {
      					echo "<div class='news'>
-      					<h4>$item->title<h4>\n";
+      					<h3>$item->title<h3>\n";
         				echo '<a href="' . $item->link . '">' . $item->title . '</a><br><br>';
         				echo $item->description . "<br><br>\n";
         				echo "</div>";
     				}
-				}*/
+				}
 
 				function create_form( $farray, $menuname ) {
 				?>

@@ -84,7 +84,7 @@ $(document).ready(function() {
 	}
 	
 	//function to parse RSS feeds through JavaScript:
-	$("#getfeed").click(function() {
+	/*$("#getfeed").click(function() {
 		var urlLink = document.getElementsByName("feed");
 		
 		$.ajax ( {
@@ -101,6 +101,6 @@ $(document).ready(function() {
     			}
   			}
 		});
-	});
+	});*/
 
 });
