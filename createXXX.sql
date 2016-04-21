@@ -21,6 +21,7 @@ CREATE TABLE games(
 	datescheduled	date,
 	players		int(11),
 	skilllevel	varchar(20),
+	FOREIGN KEY (creator) references user_info(username),
 	PRIMARY KEY(ID),
 	CHECK (ID > 0),
 ) engine = InnoDB;
