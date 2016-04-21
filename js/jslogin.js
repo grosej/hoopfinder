@@ -34,9 +34,6 @@ function register() {
 			type: "POST",
 			url: "AddValLogin.php",
 			data: {"username": username, "email": email, "password": password, "skill": skill}
-			success: function(html) {
-				alert('success!');
-			}
 		});
 	}
 	return false;
