@@ -23,7 +23,7 @@ function register() {
 	var username = document.getElementById("registerusername").value;
 	var email = document.getElementById("registeremail").value;
 	var password = document.getElementById("registerpwd").value;
-	var skill = document.getElementById("chooselevel").value;
+	var skill = document.getElementById("skilllevel").value;
 	// Returns successful data submission message when the entered information is stored in database.
 	var dataString = 'name1=' + username + '&email1=' + email + '&password1=' + password + '&skill1=' + skill;
 	if (username == '' || email == '' || password == '' || skill == '') {

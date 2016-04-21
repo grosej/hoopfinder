@@ -8,9 +8,9 @@ connect_to_db( 'morrisht' );
 $username = $_POST['registerusername'];
 $password = $_POST['registerpwd'];
 $email = $_POST['registeremail'];
-$skill = $_POST['chooselevel'];
+$skill = $_POST['skilllevel'];
 
-if (isset($_POST['name1'])) {
+if (isset($_POST['registersubmit'])) {
 	$query = "INSERT INTO `user_info` (`username`, `password`, `email`, `skilllevel`) VALUES ('$username', '$password', '$email', '$skill');";
 	perform_query($dbc, $query);
 }
