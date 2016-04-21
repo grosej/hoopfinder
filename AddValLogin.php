@@ -11,7 +11,7 @@ $email = $_POST['registeremail'];
 $skill = $_POST['chooselevel'];
 
 if (isset($_POST['name1'])) {
-$query = "INSERT INTO `user_info` (`username`, `password`, `email`, `skilllevel`) VALUES ('$username', '$password', '$email', '$skill');";
-perform_query($dbc, $query);
+	$query = "INSERT INTO `user_info` (`username`, `password`, `email`, `skilllevel`) VALUES ('$username', '$password', '$email', '$skill');";
+	perform_query($dbc, $query);
 }
 mysqli_close( $dbc );
