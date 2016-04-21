@@ -6,7 +6,7 @@ include("dbconn.php");
 connect_to_db( 'morrisht' );
 
 $username = $_POST['registerusername'];
-$password = $_POST['registerpwd'];
+$password = sha1($_POST['registerpwd']);
 $email = $_POST['registeremail'];
 $skill = $_POST['skilllevel'];
 

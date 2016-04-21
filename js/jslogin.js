@@ -36,7 +36,7 @@ function register() {
 			data: dataString,
 			cache: false,
 			success: function(html) {
-				alert(html);
+				alert('djkghdflsjglkdfg');
 			}
 		});
 	}
