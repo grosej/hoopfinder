@@ -25,7 +25,7 @@ function register() {
 	var password = document.getElementById("registerpwd").value;
 	var skill = document.getElementById("skilllevel").value;
 	// Returns successful data submission message when the entered information is stored in database.
-	var dataString = 'name1=' + username + '&email1=' + email + '&password1=' + password + '&skill1=' + skill;
+	//var dataString = 'name1=' + username + '&email1=' + email + '&password1=' + password + '&skill1=' + skill;
 	if (username == '' || email == '' || password == '' || skill == '') {
 		alert("Please Fill All Fields");
 	} else {
@@ -33,10 +33,9 @@ function register() {
 		$.ajax({
 			type: "POST",
 			url: "AddValLogin.php",
-			data: dataString,
-			cache: false,
+			data: {"username": username, "email": email, "password": password, "skill": skill}
 			success: function(html) {
-				alert('djkghdflsjglkdfg');
+				alert('success!');
 			}
 		});
 	}

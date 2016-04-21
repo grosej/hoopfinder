@@ -1,17 +1,18 @@
 <!--REGISTER/ADD USER TO DB-->
 <?php
-include("dbconn.php");
 
+$username = isset($_POST['username']) ? $_POST['username'] : "";
+$password = isset($_POST['password']) ? $_POST['password'] : "";
+$email = isset($_POST['email']) ? $_POST['email'] : "";
+$skill = isset($_POST['skill']) ? $_POST['skill'] : "";
 
-connect_to_db( 'morrisht' );
-
-$username = $_POST['registerusername'];
-$password = sha1($_POST['registerpwd']);
-$email = $_POST['registeremail'];
-$skill = $_POST['skilllevel'];
+$connection = mysql_connect("localhost", "morrisht", "MyjqzwSr");
+$db = mysql_select_db("morrisht", $connection);
 
 if (isset($_POST['registersubmit'])) {
-	$query = "INSERT INTO `user_info` (`username`, `password`, `email`, `skilllevel`) VALUES ('$username', '$password', '$email', '$skill');";
-	perform_query($dbc, $query);
+	$query = mysql_query("INSERT INTO user_info(username, password, email, skilllevel) VALUES ('$username', '$password', '$email', '$skill')");
+	echo "register successful";
 }
-mysqli_close( $dbc );
+mysqli_close($connection);
+?>
+
