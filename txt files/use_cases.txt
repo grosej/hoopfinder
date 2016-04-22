@@ -22,3 +22,9 @@
 	Pre-condition: Must be logged in to Hoop Finder
 	Post-condition: A new player will be added to an already-existant game in the games table
 	Queries: UPDATE games SET players='(current value) + 1' WHERE gamename='pickupgame1';
+	
+5. Validate an already-existant user
+	Actor: Web user
+	Pre-condition: User must attempt to log in to Hoop Finder
+	Post-condition: User will continue to main page of website
+	Queries: SELECT * from user_info WHERE username='joeschmoe' and password='(encoded password here)';
