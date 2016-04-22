@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 });
 
-function register() {
+/*function register() {
 	var username = document.getElementById("registerusername").value;
 	var email = document.getElementById("registeremail").value;
 	var password = document.getElementById("registerpwd").value;
@@ -37,7 +37,7 @@ function register() {
 		});
 	}
 	return false;
-}
+}*/
 
 
 
