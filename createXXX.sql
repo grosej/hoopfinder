@@ -7,8 +7,8 @@ CREATE TABLE courts(
 	id	int not null auto_increment,
 	courtname	varchar(40),
 	courtloc	varchar(40),
-	courtlat	int(11),
-	courtlong	int(11),
+	courtlat	int,
+	courtlong	int,
 	PRIMARY KEY(ID),
 	CHECK (ID > 0),
 ) engine = InnoDB;
@@ -16,11 +16,11 @@ CREATE TABLE courts(
 
 CREATE TABLE games(
 	id	int not null auto_increment,
-	gamename	varchar(20),
-	gameloc		varchar(20),
+	gamename	varchar(40),
+	gameloc		varchar(40),
 	creator		varchar(20),
 	datescheduled	date,
-	players		int(11),
+	players		int,
 	skilllevel	varchar(20),
 	FOREIGN KEY (gameloc) references courts(courtloc),
 	FOREIGN KEY (creator) references user_info(username),

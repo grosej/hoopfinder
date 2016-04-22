@@ -1,0 +1,24 @@
+1. Register a new user
+	Actor: Web user
+	Pre-condition: Must be on Hoop Finer website
+	Post-condition: User is inserted into user_info table with respective information
+	Queries: INSERT INTO user_info (username, password, email, skilllevel) VALUES ('joeschmoe', 'joe123', 'joe@example.com', 'Beginner');
+
+2. Insert a new court
+	Actor: Administrator
+	Pre-condition: Admin must be logged in
+	Post-condition: New court will be added to courts table with respective location info
+	Queries: INSERT INTO courts (courtname, courtloc, courtlat, courtlong) VALUES ('Conte Forum', 42.33514, -71.16792);
+	
+3. Create a new game
+	Actor: Web user
+	Pre-condition: Must be logged in to Hoop Finder
+	Post-condition: New game is inserted into games table with respective information
+	Queries: INSERT INTO games (gamename, gameloc, creator, datescheduled, players, skilllevel)
+				VALUES ('pickupgame1', 'Conte Forum', 'joeschmoe', 21-04-2016, 1, 'Beginner');
+
+4. Join an already-created game
+	Actor: Web user
+	Pre-condition: Must be logged in to Hoop Finder
+	Post-condition: A new player will be added to an already-existant game in the games table
+	Queries: UPDATE games Set players='(current value) + 1' WHERE gamename='pickupgame1';
