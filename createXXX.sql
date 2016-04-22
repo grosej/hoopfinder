@@ -10,8 +10,8 @@ CREATE TABLE courts(
 	courtlat	int,
 	courtlong	int,
 	PRIMARY KEY(ID),
-	CHECK (ID > 0),
-) engine = InnoDB;
+	CHECK (ID > 0)
+);
 
 
 CREATE TABLE games(
@@ -25,8 +25,8 @@ CREATE TABLE games(
 	FOREIGN KEY (gameloc) references courts(courtloc),
 	FOREIGN KEY (creator) references user_info(username),
 	PRIMARY KEY(ID),
-	CHECK (ID > 0),
-) engine = InnoDB;
+	CHECK (ID > 0)
+);
 
 
 CREATE TABLE user_info(
@@ -36,5 +36,5 @@ CREATE TABLE user_info(
 	email		varchar(40),
 	skilllevel	varchar(20),
 	PRIMARY KEY(ID),
-	CHECK (ID > 0),
-) engine = InnoDB;
+	CHECK (ID > 0)
+);
