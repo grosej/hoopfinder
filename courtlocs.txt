@@ -18,36 +18,36 @@
 	Lat: 42.350154	Long: -71.197229
 10. Name: Arsenal Park Courts 			Location: 485 Arsenal Street, Watertown, MA 02472
 	Lat: 42.360972	Long: -71.160145
-11. Name:   	Location: 
-	Lat: 	Long: 
-12. Name:   	Location: 
-	Lat: 	Long:
-13. Name:   	Location: 
-	Lat: 	Long: 
-14. Name:   	Location: 
-	Lat: 	Long:
-15. Name:   	Location: 
-	Lat: 	Long:
-16. Name:   	Location: 
-	Lat: 	Long:
-17. Name:   	Location: 
-	Lat: 	Long:
-18. Name:   	Location: 
-	Lat: 	Long:
-19. Name:   	Location: 
-	Lat: 	Long:
-20. Name:   	Location: 
-	Lat: 	Long:
-21. Name:   	Location: 
-	Lat: 	Long:
-22. Name:   	Location: 
-	Lat: 	Long:
-23. Name:   	Location: 
-	Lat: 	Long:
-24. Name:   	Location: 
-	Lat: 	Long:
-25. Name:   	Location: 
-	Lat: 	Long:
+11. Name: Jefferson Playground  		Location: 5 Grotto Glen Road, Jamaica Plain, MA 02130
+	Lat: 42.326031	Long: -71.108631
+12. Name: Equinox Sports Club  			Location: 4 Avery Street, Boston, MA 02111
+	Lat: 42.352998	Long: -71.063235
+13. Name: Zesiger Sports & Fitness  	Location: 120 Vassar Street, Cambridge, MA 02139
+	Lat: 42.358581	Long: -71.096461
+14. Name: Sennott Park  				Location: 312 Broadway, Cambridge, MA 02139
+	Lat: 42.368539	Long: -71.100135
+15. Name: Countryside School  			Location: 191 Dedham Street, Newton, MA 02461
+	Lat: 42.312816	Long: -71.202484
+16. Name: Allison Park  				Location: 98 Gates Street, Newton, MA 02458
+	Lat: 42.366035	Long: -71.196492
+17. Name: Lexington Park  				Location: 45 Lexington Avenue, Somerville, MA 02144
+	Lat: 42.394491	Long: -71.113886
+18. Name: Tufts Park  					Location: 448 Main Street, Medford, MA 02155
+	Lat: 42.402082	Long: -71.108023
+19. Name: Malcolm X Park  				Location: 131 Dale Street, Boston, MA 02119
+	Lat: 42.321353	Long: -71.089123
+20. Name: SW Corridor Park  			Location: 225 Centre Street, Jamaica Plain, MA 02130
+	Lat: 42.322893 	Long: -71.099010
+21. Name: Peters Park  					Location: 230 Shawmut Avenue, Boston, MA 02118
+	Lat: 42.343472	Long: -71.067244
+22. Name: Auburndale Park 				Location: 104 W Pine Street, Auburndale, MA 02466
+	Lat: 42.353467	Long: -71.251506
+23. Name: Spray Park  					Location: 284 Newton Street, Waltham, MA 02453
+	Lat: 42.367505	Long: -71.230922
+24. Name: Morse School Playground  		Location: 7 Granite Street, Cambridge, MA 02139
+	Lat: 42.355027 	Long: -71.111324
+25. Name: Back Bay Fens  				Location: 61 Park Drive, Boston, MA 02215
+	Lat: 42.342458	Long: -71.094165
 26. Name:   	Location: 
 	Lat: 	Long:
 27. Name:   	Location: 
