@@ -14,3 +14,6 @@ Team Members: Ben Morrison, Jordan Grose
 
 4/19 (Ben Morrison)
 - Email assignment inserted into the about.php file
+
+4/22 (Ben Morrison)
+- data documentation files (createXXX.sql, populateXXXX.sql, use_cases.txt, hoopfinder data er.pdf) are committed to GitHub
