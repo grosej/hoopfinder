@@ -21,4 +21,4 @@
 	Actor: Web user
 	Pre-condition: Must be logged in to Hoop Finder
 	Post-condition: A new player will be added to an already-existant game in the games table
-	Queries: UPDATE games Set players='(current value) + 1' WHERE gamename='pickupgame1';
+	Queries: UPDATE games SET players='(current value) + 1' WHERE gamename='pickupgame1';
