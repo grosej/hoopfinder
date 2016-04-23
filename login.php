@@ -1,6 +1,3 @@
-<?php
-	include('dbconn.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +73,7 @@
   				</div>
   			</div>
   			<div id="logindiv" class="form-display col-sm-4">
-				<form id="loginform" method="post" role="form" action="mainsession.html">
+				<form id="loginform" method="post" role="form" action="handlerlogin.php">
 				<fieldset id="loginfield">
 					<p>Don't have an account? <button id="signup" type="button" class="btn btn-link">Sign up here</button></p>
   					<div class="form-group">
@@ -96,51 +93,9 @@
   					<p>Forgot your password? <button id="pwdreset" name="pwdreset" type="button" class="btn btn-link">Reset it here</button></p>
 				</fieldset>
 				</form>
-				<?php
-				if ( isset( $_POST['op1'] ) ) {
-					handle_validateform( $_POST['op1'] );
-				}
-				
-				function handle_validateform( $op ){
-					$entered_username   = isset($_POST['username']) ? $_POST['username'] : "";	
-					$entered_password = isset($_POST['password']) ? $_POST['password'] : "";
-		
-					switch ( $op ) {
-						case "loginsubmit":
-							if ($entered_username == "" || $entered_password == "") {
-								$message = "Please enter a Username and Password!";
-								echo "<script type='text/javascript'>alert('$message');</script>";
-							} else {
-								validate_user( $entered_username, $entered_password);
-							}
-							break;
-						default:
-							die( "Invalid operation" );
-					}	
-				}
-				
-				function validate_user( $name, $pw ){
-					$encode = sha1( $pw );
-					$query = "SELECT * FROM `user_info` WHERE username='$name' AND password='$encode'";
-					$dbc = connect_to_db( "morrisht" );
-					$result = perform_query( $dbc, $query );
-					$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
-	
-					if ( mysqli_num_rows( $result ) == 0) {
-					?>	<div id="validatefailure" class="col-sm-12 alert alert-danger">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>Oops!</strong> Validate Failure: <?php echo "$query" ?>
-						</div>
-					<?php } else {
-					?>	<div id="validatesucces" class="col-sm-12 alert alert-success">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  							<strong>Success!</strong> Validate Successful: <?php echo "$query" ?>
-						</div>
-					<?php }
-				} ?>
 			</div>
   			<div id="registerdiv" class="form-display col-sm-4">
-  				<form id="registerform" method="post" role="form" action="mainsession.html">
+  				<form id="registerform" method="post" role="form" action="handlerlogin.php">
   				<fieldset id="registerfield">
   					<p>Already have an account? <button id="signin" type="button" class="btn btn-link">Sign in</button></p>
   					<div class="form-group">
@@ -171,48 +126,6 @@
   					<button id="registersubmit" name="registersubmit" type="submit" class="btn btn-danger pull-right">Register</button>
 				</fieldset>
 				</form>
-				<?php
-				if ( isset( $_POST['op2'] ) ) {
-					handle_registerform( $_POST['op2'] );
-				}
-				
-				function handle_registerform( $op ){
-					$entered_username   = isset($_POST['username']) ? $_POST['username'] : "";	
-					$entered_password = isset($_POST['password']) ? $_POST['password'] : "";
-					$entered_email = isset($_POST['email']) ? $_POST['email'] : "";
-					$entered_skill = isset($_POST['skilllevel']) ? $_POST['skilllevel'] : "";
-		
-					switch ( $op ) {
-						case "registersubmit":
-							if ($entered_username == "" || $entered_password == "" || $entered_email == "" || $entered_skill == "") {
-								$message = "Please complete all fields to register!";
-								echo "<script type='text/javascript'>alert('$message');</script>";
-							} else {
-								insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
-							}
-							break;
-						default:
-							die( "Invalid operation" );
-					}	
-				}
-				
-				function insert_user( $name, $pw, $email, $skill ){
-					$encode = sha1( $pw );
-					$query="INSERT INTO user_info(username, password, email, skilllevel) VALUES ('$name', '$encode', '$email', '$skill')";
-					$dbc = connect_to_db( "morrisht" );
-					$result = perform_query( $dbc, $query );
-					if ( !$result ) {
-					?>	<div id="registerfailure" class="col-sm-12 alert alert-danger">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>Oops!</strong> Register Failure: <?php echo "$query" ?>
-						</div>
-					<?php } else {
-					?>	<div id="registersucces" class="col-sm-12 alert alert-success">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  							<strong>Success!</strong> Register Successful: <?php echo "$query" ?>
-						</div>
-					<?php }
-				} ?>
 			</div>
 		</div>
 		<div id="footer" class="row">
