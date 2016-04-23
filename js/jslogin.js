@@ -19,26 +19,6 @@ $(document).ready(function() {
 
 });
 
-/*function register() {
-	var username = document.getElementById("registerusername").value;
-	var email = document.getElementById("registeremail").value;
-	var password = document.getElementById("registerpwd").value;
-	var skill = document.getElementById("skilllevel").value;
-	// Returns successful data submission message when the entered information is stored in database.
-	//var dataString = 'name1=' + username + '&email1=' + email + '&password1=' + password + '&skill1=' + skill;
-	if (username == '' || email == '' || password == '' || skill == '') {
-		alert("Please Fill All Fields");
-	} else {
-		// AJAX code to submit form.
-		$.ajax({
-			type: "POST",
-			url: "AddValLogin.php",
-			data: {"username": username, "email": email, "password": password, "skill": skill}
-		});
-	}
-	return false;
-}*/
-
 
 
 
