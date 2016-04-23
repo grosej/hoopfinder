@@ -48,22 +48,22 @@
 	Lat: 42.355027 	Long: -71.111324
 25. Name: Back Bay Fens  				Location: 61 Park Drive, Boston, MA 02215
 	Lat: 42.342458	Long: -71.094165
-26. Name:   	Location: 
-	Lat: 	Long:
-27. Name:   	Location: 
-	Lat: 	Long:
-28. Name:   	Location: 
-	Lat: 	Long:
-29. Name:   	Location: 
-	Lat: 	Long:
-30. Name:   	Location: 
-	Lat: 	Long:
-31. Name:   	Location: 
-	Lat: 	Long:
-32. Name:   	Location: 
-	Lat: 	Long:
-33. Name:   	Location: 
-	Lat: 	Long:
+26. Name: McKinney Playground		   	Location: 61 Faneuil Street, Brighton, MA 02135
+	Lat: 42.355532	Long: -71.152854
+27. Name: Devotion Playground		  	Location: 49 Stedman Street, Brookline, MA 02446
+	Lat: 42.345898 	Long: -71.123439
+28. Name: Lawton Playground			 	Location: 119 Lawton Street, Brookline, MA 02446
+	Lat: 42.349534	Long: -71.126770
+29. Name: Ringer Courts   				Location: 77 Allston Street, Boston, MA 02134
+	Lat: 42.350383	Long: -71.136642
+30. Name: Longwood Playground  			Location: 41 Francis Street, Brookline, MA 02446
+	Lat: 42.339725	Long: -71.115226
+31. Name: Hobart Park				  	Location: 75 Hobart Street, Boston, MA 02135
+	Lat: 42.355698	Long: -71.161236
+32. Name: Cabot Park				 	Location: 3 Parkview Ave, Newton, MA 02460
+	Lat: 42.350232 	Long: -71.197861
+33. Name: Boylston Street Playground  	Location: 19 Leverett Street, Brookline, MA 02445
+	Lat: 42.331163	Long: -71.121895
 34. Name:   	Location: 
 	Lat: 	Long:
 35. Name:   	Location: 

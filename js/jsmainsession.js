@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//initializing the three main divs and sidemenu buttons:
+	//initializing the two main divs and sidemenu buttons:
 	var $scheduledDiv = $("#scheduled_games");
 	var $areagamesDiv = $("#area_games");
 	
