@@ -31,7 +31,7 @@
   				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
-  					<li><a href="login.html">Welcome</a></li>
+  					<li><a href="login.php">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
     				<li><a href="adminlogin.html">Admin Login</a></li>
   				</ul>
