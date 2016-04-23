@@ -113,6 +113,7 @@
 
 				if ( isset( $_GET['getfeed'] ) ) {
 					handle_form( $_GET['feed'] );
+					echo "<script type='text/javascript'>\$(\"#aboutdiv\").hide();\$(\"#newsdiv\").show();\$(\"#contactdiv\").hide();</script>";
 				}
 
 				function handle_form( $myfeed ) {
@@ -172,6 +173,7 @@
     				display_contactform();
     				if ( isset( $_POST['contactsubmitbtn'] ) ) {
 						handle_contactform();
+						echo "<script type='text/javascript'>\$(\"#aboutdiv\").hide();\$(\"#newsdiv\").hide();\$(\"#contactdiv\").show();</script>";
 					}
 					
 					function display_contactform() {
