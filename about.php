@@ -197,9 +197,9 @@
 					}
 					
 					function handle_contactform(){
-						$contactname = $_POST['name'];
-						$contactemail = $_POST['email'];
-						$contactcomments = $_POST['comments'];
+						$contactname = isset($_POST['name']) ? $_POST['name'] : "";
+						$contactemail = isset($_POST['email']) ? $_POST['email'] : "";
+						$contactcomments = isset($_POST['comments']) ? $_POST['comments'] : "";
 						
 						$subject="Thank you for contacting Hoop Finder!";
 						$adminsubject="New contact inquiry from $contactname";
@@ -207,18 +207,23 @@
 						$headers="From: morrisht@bc.edu";
 						$headersadmin="From: $contactemail";
 						
-						if ( mail( $contactemail, $subject, $body, $headers) && 
-								mail('morrisht@bc.edu', $adminsubject, $contactcomments, $headersadmin) ) {
-						?>	<div id="contactsucces" class="col-sm-12 alert alert-success">
-								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  								<strong>Success!</strong> Your contact submission has been sent. Thank you for your inquiry!
-							</div>
-						<?php } else {
-						?>	<div id="contacterror" class="col-sm-12 alert alert-danger">
-								<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-								<strong>Oops!</strong> Something went wrong. Check your internet connection and please try again.
-							</div>
-						<?php }
+						if($contactname == "" || $contactemail == "" || $contactcomments == ""){
+							$message = "Please complete all fields to submit your contact inquiry!";
+							echo "<script type='text/javascript'>alert('$message');</script>";
+						} else {
+							if ( mail( $contactemail, $subject, $body, $headers) && 
+									mail('morrisht@bc.edu', $adminsubject, $contactcomments, $headersadmin) ) {
+							?>	<div id="contactsucces" class="col-sm-12 alert alert-success">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  									<strong>Success!</strong> Your contact submission has been sent. Thank you for your inquiry!
+								</div>
+							<?php } else {
+							?>	<div id="contacterror" class="col-sm-12 alert alert-danger">
+									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+									<strong>Oops!</strong> Something went wrong. Check your internet connection and please try again.
+								</div>
+							<?php }
+						}
 					}
     			?>
     			</div>

@@ -24,7 +24,7 @@
   				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
-    				<li><a href="login.html">Welcome</a></li>
+    				<li><a href="login.php">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
     				<li><a href="adminlogin.html">Admin Login</a></li>
   				</ul>
@@ -76,7 +76,7 @@
   				</div>
   			</div>
   			<div id="logindiv" class="form-display col-sm-4">
-				<form id="loginform" method="post" role="form">
+				<form id="loginform" method="post" role="form" action="mainsession.html">
 				<fieldset id="loginfield">
 					<p>Don't have an account? <button id="signup" type="button" class="btn btn-link">Sign up here</button></p>
   					<div class="form-group">
@@ -102,12 +102,17 @@
 				}
 				
 				function handle_validateform( $op ){
-					$entered_username   = $_POST['username'];	
-					$entered_password = $_POST['password'];
+					$entered_username   = isset($_POST['username']) ? $_POST['username'] : "";	
+					$entered_password = isset($_POST['password']) ? $_POST['password'] : "";
 		
 					switch ( $op ) {
 						case "loginsubmit":
-							validate_user( $entered_username, $entered_password) ;	
+							if ($entered_username == "" || $entered_password == "") {
+								$message = "Please enter a Username and Password!";
+								echo "<script type='text/javascript'>alert('$message');</script>";
+							} else {
+								validate_user( $entered_username, $entered_password);
+							}
 							break;
 						default:
 							die( "Invalid operation" );
@@ -135,7 +140,7 @@
 				} ?>
 			</div>
   			<div id="registerdiv" class="form-display col-sm-4">
-  				<form id="registerform" method="post" role="form">
+  				<form id="registerform" method="post" role="form" action="mainsession.html">
   				<fieldset id="registerfield">
   					<p>Already have an account? <button id="signin" type="button" class="btn btn-link">Sign in</button></p>
   					<div class="form-group">
@@ -169,26 +174,22 @@
 				<?php
 				if ( isset( $_POST['op2'] ) ) {
 					handle_registerform( $_POST['op2'] );
-					?>
-					<script>
-						var $loginDiv = $("#logindiv");
-						var $registerDiv = $("#registerdiv");
-	
-						$loginDiv.hide();
-						$registerDiv.show();
-					</script>
-					<?php
 				}
 				
 				function handle_registerform( $op ){
-					$entered_username   = $_POST['username'];	
-					$entered_password = $_POST['password'];
-					$entered_email = $_POST['email'];
-					$entered_skill = $_POST['skilllevel'];
+					$entered_username   = isset($_POST['username']) ? $_POST['username'] : "";	
+					$entered_password = isset($_POST['password']) ? $_POST['password'] : "";
+					$entered_email = isset($_POST['email']) ? $_POST['email'] : "";
+					$entered_skill = isset($_POST['skilllevel']) ? $_POST['skilllevel'] : "";
 		
 					switch ( $op ) {
 						case "registersubmit":
-							insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
+							if ($entered_username == "" || $entered_password == "" || $entered_email == "" || $entered_skill == "") {
+								$message = "Please complete all fields to register!";
+								echo "<script type='text/javascript'>alert('$message');</script>";
+							} else {
+								insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
+							}
 							break;
 						default:
 							die( "Invalid operation" );
