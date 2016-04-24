@@ -73,17 +73,24 @@
   				</div>
   			</div>
   			<div id="logindiv" class="form-display col-sm-4">
+  			<?php
+  				display_loginform();
+  				
+  				function display_loginform() {
+  					$loginusername = isset( $_POST['username'] ) ? $_POST['username'] : "";
+  					$loginpwd = isset( $_POST['password'] ) ? $_POST['password'] : "";
+  			?>
 				<form id="loginform" method="post" role="form" action="handlerlogin.php">
 				<fieldset id="loginfield">
 					<p>Don't have an account? <button id="signup" type="button" class="btn btn-link">Sign up here</button></p>
   					<div class="form-group">
     					<label for="loginusername">Username:</label>
-    					<input type="text" class="form-control" id="loginusername" name="username" placeholder="Enter username" required>
+    					<input type="text" class="form-control" id="loginusername" name="username" value="<?php echo $loginusername ?>" minlength="5" maxlength="20" placeholder="Enter username" required>
   					</div>
   					<div id="loginnameerror"></div>
   					<div class="form-group">
     					<label for="loginpwd">Password:</label>
-    					<input type="password" class="form-control" id="loginpwd" name="password" placeholder="Enter password" required>
+    					<input type="password" class="form-control" id="loginpwd" name="password" value="<?php echo $loginpwd ?>" minlength="5" maxlength="20" placeholder="Enter password" required>
   					</div>
   					<div id="loginpassworderror"></div>
   					<input type="hidden" name="op1" value="loginsubmit" />
@@ -93,19 +100,28 @@
   					<p>Forgot your password? <button id="pwdreset" name="pwdreset" type="button" class="btn btn-link">Reset it here</button></p>
 				</fieldset>
 				</form>
+				<?php } ?>
 			</div>
   			<div id="registerdiv" class="form-display col-sm-4">
+  			<?php
+  				display_registerform();
+  				
+  				function display_registerform() {
+  					$registerusername = isset( $_POST['username'] ) ? $_POST['username'] : "";
+  					$registerpwd = isset( $_POST['password'] ) ? $_POST['password'] : "";
+  					$registeremail = isset( $_POST['email'] ) ? $_POST['email'] : "";
+  			?>
   				<form id="registerform" method="post" role="form" action="handlerlogin.php">
   				<fieldset id="registerfield">
   					<p>Already have an account? <button id="signin" type="button" class="btn btn-link">Sign in</button></p>
   					<div class="form-group">
     					<label for="registerusername">Username:</label>
-    					<input type="text" class="form-control" id="registerusername" name="username" placeholder="Create username" required>
+    					<input type="text" class="form-control" id="registerusername" name="username" value="<?php echo $registerusername ?>" minlength="5" maxlength="20" placeholder="Create username" required>
   					</div>
   					<div id="registernameerror"></div>
   					<div class="form-group">
     					<label for="registerpwd">Password:</label>
-    					<input type="password" class="form-control" id="registerpwd" name="password" placeholder="Create password" required>
+    					<input type="password" class="form-control" id="registerpwd" name="password" value="<?php echo $registerpwd ?>" minlength="5" maxlength="20" placeholder="Create password" required>
   					</div>
   					<div id="registerpassworderror"></div>
   					<div class="form-group">
@@ -117,15 +133,17 @@
   							<option id="advanced" name="advanced" value="Advanced">Advanced</option>
   						</select>
   					</div>
+  					<div id="skilllevelerror"></div>
   					<div class="form-group">
     					<label for="registeremail">Email:</label>
-    					<input type="email" class="form-control" id="registeremail" name="email" placeholder="Enter your email" required>
+    					<input type="email" class="form-control" id="registeremail" name="email" value="<?php echo $registeremail ?>" maxlength="20" placeholder="Enter your email" required>
   					</div>
   					<div id="registeremailerror"></div>
   					<input type="hidden" name="op2" value="registersubmit" />
   					<button id="registersubmit" name="registersubmit" type="submit" class="btn btn-danger pull-right">Register</button>
 				</fieldset>
 				</form>
+				<?php } ?>
 			</div>
 		</div>
 		<div id="footer" class="row">

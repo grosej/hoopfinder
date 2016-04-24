@@ -50,10 +50,30 @@ $(document).ready(function() {
 		$("#contactbutton").addClass("btn-primary");
 	});
 	
-	//function to keep newsdiv the active div when feed button is pressed:
-	$("#getfeed").on('click', function() {
-		window.history.go(-1);
-	});
+	//function to keep contactdiv and newsdiv the active div when buttons are pressed:
+	/*document.getElementById('contactsubmitbtn').onclick = function() {
+   		$aboutDiv.hide();
+		$("#aboutbutton").removeClass("btn-primary");
+		$("#aboutbutton").addClass("btn-info");
+		$newsDiv.hide();
+		$("#newsbutton").removeClass("btn-primary");
+		$("#newsbutton").addClass("btn-info");
+		$contactDiv.show();
+		$("#contactbutton").removeClass("btn-info");
+		$("#contactbutton").addClass("btn-primary");
+	};
+	
+	document.getElementById('getfeed').onclick = function() {
+   		$aboutDiv.hide();
+		$("#aboutbutton").removeClass("btn-primary");
+		$("#aboutbutton").addClass("btn-info");
+		$newsDiv.show();
+		$("#newsbutton").removeClass("btn-info");
+		$("#newsbutton").addClass("btn-primary");
+		$contactDiv.hide();
+		$("#contactbutton").removeClass("btn-primary");
+		$("#contactbutton").addClass("btn-info");
+	};*/
 	
 	//coordinates to Boston College:
 	var myCenter = new google.maps.LatLng(42.339770, -71.166755);

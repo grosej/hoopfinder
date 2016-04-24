@@ -31,7 +31,7 @@
   				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
-  					<li><a href="login.html">Welcome</a></li>
+  					<li><a href="login.php">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
     				<li><a href="adminlogin.html">Admin Login</a></li>
   				</ul>
@@ -113,7 +113,6 @@
 
 				if ( isset( $_GET['getfeed'] ) ) {
 					handle_form( $_GET['feed'] );
-					echo "<script type='text/javascript'>\$(\"#aboutdiv\").hide();\$(\"#newsdiv\").show();\$(\"#contactdiv\").hide();</script>";
 				}
 
 				function handle_form( $myfeed ) {
@@ -173,7 +172,6 @@
     				display_contactform();
     				if ( isset( $_POST['contactsubmitbtn'] ) ) {
 						handle_contactform();
-						echo "<script type='text/javascript'>\$(\"#aboutdiv\").hide();\$(\"#newsdiv\").hide();\$(\"#contactdiv\").show();</script>";
 					}
 					
 					function display_contactform() {
@@ -184,13 +182,13 @@
     			<form id="contact" method="post" role="form">
       				<div class="row">
         				<div class="col-sm-6 form-group">
-          					<input class="form-control" id="contactname" name="name" placeholder="Enter Name" type="text" required>
+          					<input class="form-control" id="contactname" name="name" placeholder="Enter Name" type="text" value="<?php echo $contactname ?>" required>
         				</div>
         				<div class="col-sm-6 form-group">
-          					<input class="form-control" id="contactemail" name="email" placeholder="Enter Email" type="email" required>
+          					<input class="form-control" id="contactemail" name="email" placeholder="Enter Email" type="email" value="<?php echo $contactemail ?>" required>
         				</div>
       				</div>
-      				<textarea class="form-control" id="contactcomments" name="comments" placeholder="Enter Comment Here" rows="5"></textarea>
+      				<textarea class="form-control" id="contactcomments" name="comments" placeholder="Enter Comment Here" value="<?php echo $contactcomments ?>" rows="5"></textarea>
         			<div id="contactsubmit" class="col-sm-12 form-group">
           				<button id="contactsubmitbtn" name="contactsubmitbtn" class="btn btn-danger pull-right" type="submit">Send</button>
         			</div>
@@ -205,7 +203,7 @@
 						
 						$subject="Thank you for contacting Hoop Finder!";
 						$adminsubject="New contact inquiry from $contactname";
-						$body="Dear $contactname,\n Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to call us at (203) 216-1168. Have a great day!";
+						$body="Dear $contactname,\n\n \t Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to call us at (203) 216-1168. Have a great day!";
 						$headers="From: morrisht@bc.edu";
 						$headersadmin="From: $contactemail";
 						
