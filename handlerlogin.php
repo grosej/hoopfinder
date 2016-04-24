@@ -120,15 +120,16 @@
 			$password .= $passchar;
 		}
 		
-		$query="UPDATE `user_info` SET password='$password' WHERE email='$email'";
+		$encode = sha1( $password );
+		$query="UPDATE `user_info` SET password='$encode' WHERE email='$email'";
 		$dbc = connect_to_db( "morrisht" );
 		$result = perform_query( $dbc, $query );
 		$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
 		
 		if (mysqli_num_rows( $result ) == 0) {
-			$message = "Email not found. Please enter an email address in our database.";
+			$message1 = "Email not found. Please enter a valied email address.";
 			echo "<script type='text/javascript'>
-					alert('$message');
+					alert('$message1');
 					window.location.replace(\"login.php\");
 					</script>";
 		} else {
@@ -136,7 +137,19 @@
 			$body="Hello $email,\n\n \t This is an email to reset your password for Hoop Finder. Your new password is: $password. Happy hoop finding!";
 			$headers="From: admin@hoopfinder.com";
 		
-			mail( $email, $subject, $body, $headers);
+			if( mail( $email, $subject, $body, $headers) ) {
+				$message2 = "Success! Your password has been reset. Please check your email for your new password.";
+				echo "<script type='text/javascript'>
+						alert('$message2');
+						window.location.replace(\"login.php\");
+						</script>";
+			} else {
+				$message3 = "Oops! Something went wrong. Please check your internet connection and try again.";
+				echo "<script type='text/javascript'>
+						alert('$message3');
+						window.location.replace(\"login.php\");
+						</script>";
+			}
 		}
 	}
 ?>

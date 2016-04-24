@@ -64,5 +64,6 @@ body {
 	}
 /* modal for password reset: */
 #myModal {
+	position: fixed;
 	z-index: 1;
 	}

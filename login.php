@@ -98,27 +98,6 @@
   					<br />
   					<br />
   					<p>Forgot your password? <button id="pwdreset" name="pwdreset" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-link">Reset it here</button></p>
-  					<div id="myModal" class="modal fade" role="dialog">
-  						<div class="modal-dialog">
-    						<div class="modal-content">
-      							<div class="modal-header">
-        							<h4 class="modal-title">Reset Password</h4>
-      							</div>
-      							<div class="modal-body">
-        							<form id="resetpwd_form" method="post" role="form" action="handlerlogin.php">
-        								<div class="form-group">
-    										<label for="resetpwdemail">Enter Your Email:</label>
-    										<input type="email" class="form-control" id="resetpwdemail" name="resetpwdemail" maxlength="20" placeholder="Enter your email" required>
-  										</div>
-  										<button id="resetpwdsubmit" name="resetpwdsubmit" type="submit" class="btn btn-danger pull-right">Reset Password</button>
-        							</form>
-      							</div>
-      							<div class="modal-footer">
-        							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      							</div>
-    						</div>
-  						</div>
-					</div>
 				</fieldset>
 				</form>
 				<?php } ?>
@@ -173,5 +152,28 @@
 			</div>
 		</div>
 	</div><!-- .container -->
+<!-- Modal -->	
+<div id="myModal" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<h4 class="modal-title">Reset Password</h4>
+      		</div>
+      		<div class="modal-body">
+        		<form id="resetpwd_form" method="post" role="form" action="handlerlogin.php">
+        			<div class="form-group">
+    					<label for="resetpwdemail">Email:</label>
+    					<input type="email" class="form-control" id="resetpwdemail" name="resetpwdemail" maxlength="20" placeholder="Enter your email" required>
+  					</div>
+  					<button id="resetpwdsubmit" name="resetpwdsubmit" type="submit" class="btn btn-danger pull-right">Reset Password</button>
+        		</form>
+      		</div>
+      		<br />
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
 </body>
 </html>
