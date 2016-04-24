@@ -1,10 +1,11 @@
 DROP TABLE IF EXISTS courts;
 DROP TABLE IF EXISTS games;
 DROP TABLE IF EXISTS user_info;
+DROP TABLE IF EXISTS admin_table;
 
 
 CREATE TABLE courts(
-	id	int not null auto_increment,
+	ID	int not null auto_increment,
 	courtname	varchar(40),
 	courtloc	varchar(40),
 	courtlat	int,
@@ -15,7 +16,7 @@ CREATE TABLE courts(
 
 
 CREATE TABLE games(
-	id	int not null auto_increment,
+	ID	int not null auto_increment,
 	gamename	varchar(40),
 	gameloc		varchar(40),
 	creator		varchar(20),
@@ -30,11 +31,19 @@ CREATE TABLE games(
 
 
 CREATE TABLE user_info(
-	id	int not null auto_increment,
+	ID	int not null auto_increment,
 	username	varchar(20),
-	password	varchar(20) not null,
+	password	varchar(40) not null,
 	email		varchar(40),
 	skilllevel	varchar(20),
+	PRIMARY KEY(ID),
+	CHECK (ID > 0)
+);
+
+CREATE TABLE admin_table(
+	id	int not null auto_increment,
+	username	varchar(20),
+	password	varchar(40),
 	PRIMARY KEY(ID),
 	CHECK (ID > 0)
 );

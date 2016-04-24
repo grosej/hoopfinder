@@ -13,4 +13,8 @@ INSERT INTO user_info (username, password, email, skilllevel) VALUES ('joeschmoe
 INSERT INTO user_info (username, password, email, skilllevel) VALUES ('jordangrose', 'jpg123', 'grose@bc.edu', 'Intermediate');
 INSERT INTO user_info (username, password, email, skilllevel) VALUES ('benmorrison', 'bmorr123', 'morrisht@bc.edu', 'Advanced');
 
+INSERT INTO admin_table (username, password) VALUES ('morrisht', '1785ed6ccf537856a2e5d0935a1ffb2dde2d3ab5');
+INSERT INTO admin_table (username, password) VALUES ('grose', '1785ed6ccf537856a2e5d0935a1ffb2dde2d3ab5');
+
+
 
