@@ -41,7 +41,7 @@ CREATE TABLE user_info(
 );
 
 CREATE TABLE admin_table(
-	id	int not null auto_increment,
+	ID	int not null auto_increment,
 	username	varchar(20),
 	password	varchar(40),
 	PRIMARY KEY(ID),
