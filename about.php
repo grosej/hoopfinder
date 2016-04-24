@@ -204,7 +204,7 @@
 						$subject="Thank you for contacting Hoop Finder!";
 						$adminsubject="New contact inquiry from $contactname";
 						$body="Dear $contactname,\n\n \t Thank you for your inquiry that you have sent us here at Hoop Finder. We appreciate the time you have taken to get in touch with us. We will process your message, and you will hear back from us within the next week. If this is an urgent matter, please feel free to call us at (203) 216-1168. Have a great day!";
-						$headers="From: morrisht@bc.edu";
+						$headers="From: contact@hoopfinder.com";
 						$headersadmin="From: $contactemail";
 						
 						if($contactname == "" || $contactemail == "" || $contactcomments == ""){

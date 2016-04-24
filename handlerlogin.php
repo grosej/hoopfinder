@@ -49,7 +49,7 @@
 	}
 				
 	function handle_registerform( $op ){
-		$entered_username   = isset($_POST['username']) ? $_POST['username'] : "";	
+		$entered_username = isset($_POST['username']) ? $_POST['username'] : "";	
 		$entered_password = isset($_POST['password']) ? $_POST['password'] : "";
 		$entered_email = isset($_POST['email']) ? $_POST['email'] : "";
 		$entered_skill = isset($_POST['skilllevel']) ? $_POST['skilllevel'] : "";
@@ -84,6 +84,59 @@
 					</script>";
 		} else {
 			header("Location: mainsession.html");
+		}
+	}
+	
+	if (isset ( $_POST['resetpwdsubmit'] ) ) {
+		handle_resetpwd();
+	}
+	
+	function handle_resetpwd() {
+		$resetemail = isset($_POST['resetpwdemail']) ? $_POST['resetpwdemail'] : "";
+		
+		if ($resetemail == "") {
+			$message = "Please enter an email address!";
+			echo "<script type='text/javascript'>
+					alert('$message');
+					window.location.replace(\"login.php\");
+				</script>";
+		} else {
+			email_reset($resetemail);
+		}
+	}
+	
+	function email_reset ($email) {
+		//start with empty password
+		$password="";
+		
+		//define possible characters
+		$possible="23456789abcdefghjklmnpwrstuvwxyz";
+		$length = 8;
+		
+		for ($i = 1; $i <= $length; $i++) {
+			// pick a random character from the possible characters
+			$pick = rand( 0, strlen( $possible ) - 1 );
+			$passchar  = substr( $possible, $pick, 1 );
+			$password .= $passchar;
+		}
+		
+		$query="UPDATE `user_info` SET password='$password' WHERE email='$email'";
+		$dbc = connect_to_db( "morrisht" );
+		$result = perform_query( $dbc, $query );
+		$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
+		
+		if (mysqli_num_rows( $result ) == 0) {
+			$message = "Email not found. Please enter an email address in our database.";
+			echo "<script type='text/javascript'>
+					alert('$message');
+					window.location.replace(\"login.php\");
+					</script>";
+		} else {
+			$subject="Hoop Finder -- Your Password Reset";
+			$body="Hello $email,\n\n \t This is an email to reset your password for Hoop Finder. Your new password is: $password. Happy hoop finding!";
+			$headers="From: admin@hoopfinder.com";
+		
+			mail( $email, $subject, $body, $headers);
 		}
 	}
 ?>

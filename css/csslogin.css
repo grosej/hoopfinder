@@ -62,4 +62,7 @@ body {
 #skilllevel {
 	padding: 0px 5px 0px 5px;
 	}
-	
+/* modal for password reset: */
+#myModal {
+	z-index: 1;
+	}
