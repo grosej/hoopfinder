@@ -54,6 +54,10 @@
 		$entered_email = isset($_POST['email']) ? $_POST['email'] : "";
 		$entered_skill = isset($_POST['skilllevel']) ? $_POST['skilllevel'] : "";
 		
+		$query="SELECT * FROM `user_info` WHERE email='$entered_email'";
+		$dbc = connect_to_db( "morrisht" );
+		$result = perform_query( $dbc, $query);
+		
 		switch ( $op ) {
 			case "registersubmit":
 				if ($entered_username == "" || $entered_password == "" || $entered_email == "" || $entered_skill == "") {
@@ -62,6 +66,12 @@
 							alert('$message');
 							window.location.replace(\"login.php\");
 						</script>";
+				} else if ( mysqli_num_rows( $result ) > 0 ) {
+					$message2 = "That email is already registered in our database. Please enter a different email address.";
+					echo "<script type='text/javascript'>
+							alert('$message2');
+							window.location.replace(\"login.php\");
+							</script>";
 				} else {
 					insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
 				}
@@ -76,8 +86,9 @@
 		$query="INSERT INTO user_info(username, password, email, skilllevel) VALUES ('$name', '$encode', '$email', '$skill')";
 		$dbc = connect_to_db( "morrisht" );
 		$result = perform_query( $dbc, $query );
+		
 		if ( !$result ) {
-			$message = "Registration failed! Please reenter your username and password and try again";
+			$message = "Registration failed! Please reenter your credentials and try again.";
 			echo "<script type='text/javascript'>
 					alert('$message');
 					window.location.replace(\"login.php\");
@@ -87,38 +98,32 @@
 		}
 	}
 	
-	if (isset ( $_POST['resetpwdsubmit'] ) ) {
-		handle_resetpwd();
+	if (isset ( $_POST['op3'] ) ) {
+		handle_resetpwd( $_POST['op3'] );
 	}
 	
-	function handle_resetpwd() {
+	function handle_resetpwd( $op ) {
 		$resetemail = isset($_POST['resetpwdemail']) ? $_POST['resetpwdemail'] : "";
 		
-		if ($resetemail == "") {
-			$message = "Please enter an email address!";
-			echo "<script type='text/javascript'>
-					alert('$message');
-					window.location.replace(\"login.php\");
-				</script>";
-		} else {
-			email_reset($resetemail);
+		switch ( $op ) {
+			case "resetpwdsubmit":
+				if ($resetemail == "") {
+					$message = "Please enter an email address!";
+					echo "<script type='text/javascript'>
+							alert('$message');
+							window.location.replace(\"login.php\");
+						</script>";
+				} else {
+					email_reset( $resetemail );
+				}
+				break;
+			default:
+				die( "Invalid operation" );
 		}
 	}
 	
-	function email_reset ($email) {
-		//start with empty password
-		$password="";
-		
-		//define possible characters
-		$possible="23456789abcdefghjklmnpwrstuvwxyz";
-		$length = 8;
-		
-		for ($i = 1; $i <= $length; $i++) {
-			// pick a random character from the possible characters
-			$pick = rand( 0, strlen( $possible ) - 1 );
-			$passchar  = substr( $possible, $pick, 1 );
-			$password .= $passchar;
-		}
+	function email_reset ( $email ) {
+		$password = create_password();
 		
 		$encode = sha1( $password );
 		$query="UPDATE `user_info` SET password='$encode' WHERE email='$email'";
@@ -136,8 +141,9 @@
 			$subject="Hoop Finder -- Your Password Reset";
 			$body="Hello $email,\n\n \t This is an email to reset your password for Hoop Finder. Your new password is: $password. Happy hoop finding!";
 			$headers="From: admin@hoopfinder.com";
+			mail( $email, $subject, $body, $headers );
 		
-			if( mail( $email, $subject, $body, $headers) ) {
+			/*if( mail( $email, $subject, $body, $headers ) ) {
 				$message2 = "Success! Your password has been reset. Please check your email for your new password.";
 				echo "<script type='text/javascript'>
 						alert('$message2');
@@ -149,7 +155,25 @@
 						alert('$message3');
 						window.location.replace(\"login.php\");
 						</script>";
-			}
+			}*/
 		}
+	}
+	
+	function create_password() {
+		// start with an empty password
+		$password="";
+	
+		//define possible characters
+		$possible="23456789abcdefghjklmnpwrstuvwxyz";
+
+		$length=8;
+	
+		for ($i = 1; $i <= $length; $i++){
+			// pick a random character from the possible characters
+			$pick = rand( 0, strlen( $possible ) - 1 );
+			$passchar  = substr( $possible, $pick, 1 );
+			$password .= $passchar;
+		}
+		return $password;
 	}
 ?>

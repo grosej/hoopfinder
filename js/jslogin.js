@@ -17,6 +17,9 @@ $(document).ready(function() {
 		$loginDiv.show();
 	});
 	
+	//code to allow modal to function:
+	$('#myModal').appendTo("body");
+	
 	//code to validate form inputs:
 	function validate_loginname(){
 		var loginname = document.getElementById("loginusername").value ;

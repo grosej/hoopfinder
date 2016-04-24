@@ -4,10 +4,10 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Hoop Finder  |  Welcome</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/csslogin.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jslogin.js"></script>
 </head>
 <body>
@@ -136,7 +136,7 @@
   					<div id="skilllevelerror"></div>
   					<div class="form-group">
     					<label for="registeremail">Email:</label>
-    					<input type="email" class="form-control" id="registeremail" name="email" value="<?php echo $registeremail ?>" maxlength="20" placeholder="Enter your email" required>
+    					<input type="email" class="form-control" id="registeremail" name="email" value="<?php echo $registeremail ?>" maxlength="40" placeholder="Enter your email" required>
   					</div>
   					<div id="registeremailerror"></div>
   					<input type="hidden" name="op2" value="registersubmit" />
@@ -157,15 +157,17 @@
   	<div class="modal-dialog">
     	<div class="modal-content">
       		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal">&times;</button>
         		<h4 class="modal-title">Reset Password</h4>
       		</div>
       		<div class="modal-body">
         		<form id="resetpwd_form" method="post" role="form" action="handlerlogin.php">
         			<div class="form-group">
     					<label for="resetpwdemail">Email:</label>
-    					<input type="email" class="form-control" id="resetpwdemail" name="resetpwdemail" maxlength="20" placeholder="Enter your email" required>
+    					<input type="email" class="form-control" id="resetpwdemail" name="resetpwdemail" maxlength="40" placeholder="Enter your email" required>
   					</div>
-  					<button id="resetpwdsubmit" name="resetpwdsubmit" type="submit" class="btn btn-danger pull-right">Reset Password</button>
+  					<input type="hidden" name="op3" value="resetpwdsubmit" />
+  					<button id="resetpwdsubmit" name="resetpwdsubmit" type="submit" class="btn btn-danger">Reset Password</button>
         		</form>
       		</div>
       		<br />
