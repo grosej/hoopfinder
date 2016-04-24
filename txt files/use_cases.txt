@@ -2,7 +2,7 @@
 	Actor: Web user
 	Pre-condition: Must be on Hoop Finer website
 	Post-condition: User is inserted into user_info table with respective information
-	Queries: INSERT INTO user_info (username, password, email, skilllevel) VALUES ('joeschmoe', 'joe123', 'joe@example.com', 'Beginner');
+	Queries: INSERT INTO user_info (username, password, email, skilllevel) VALUES ('joeschmoe', '(their encoded password)', 'joe@example.com', 'Beginner');
 
 2. Insert a new court
 	Actor: Administrator
@@ -26,5 +26,5 @@
 5. Validate an already-existant user
 	Actor: Web user
 	Pre-condition: User must attempt to log in to Hoop Finder
-	Post-condition: User will continue to main page of website
+	Post-condition: User will continue to main page of website if properly validated
 	Queries: SELECT * from user_info WHERE username='joeschmoe' and password='(encoded password here)';
