@@ -55,12 +55,14 @@
 		$entered_skill = isset($_POST['skilllevel']) ? $_POST['skilllevel'] : "";
 		
 		$query="SELECT * FROM `user_info` WHERE email='$entered_email'";
+		$query2="SELECT * FROM `user_info` WHERE username='$entered_username'";
 		$dbc = connect_to_db( "morrisht" );
 		$result = perform_query( $dbc, $query);
+		$result2 = perform_query( $dbc, $query2);
 		
 		switch ( $op ) {
 			case "registersubmit":
-				if ($entered_username == "" || $entered_password == "" || $entered_email == "" || $entered_skill == "") {
+				if ($entered_username == "" || $entered_password == "" || $entered_email == "" || $entered_skill == "Choose Skill Level") {
 					$message = "Please complete all fields to register!";
 					echo "<script type='text/javascript'>
 							alert('$message');
@@ -72,6 +74,12 @@
 							alert('$message2');
 							window.location.replace(\"login.php\");
 							</script>";
+				} else if ( mysqli_num_rows( $result2 ) > 0 ) {
+					$message3 = "That username is already taken. Please enter a different username.";
+					echo "<script type='text/javascript'>
+							alert('$message3');
+							window.location.replace(\"login.php\");
+						</script>";
 				} else {
 					insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
 				}
@@ -132,7 +140,7 @@
 		$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
 		
 		if (mysqli_num_rows( $result ) == 0) {
-			$message1 = "Email not found. Please enter a valied email address.";
+			$message1 = "Email not found. Please enter a valid email address.";
 			echo "<script type='text/javascript'>
 					alert('$message1');
 					window.location.replace(\"login.php\");
