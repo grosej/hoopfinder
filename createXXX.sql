@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS admin_table;
 CREATE TABLE courts(
 	ID	int not null auto_increment,
 	courtname	varchar(40),
-	courtloc	varchar(40),
+	courtloc	varchar(60),
 	courtlat	float,
 	courtlong	float,
 	PRIMARY KEY(ID),
@@ -18,7 +18,7 @@ CREATE TABLE courts(
 CREATE TABLE games(
 	ID	int not null auto_increment,
 	gamename	varchar(40),
-	gameloc		varchar(40),
+	gameloc		varchar(60),
 	creator		varchar(20),
 	datescheduled	date,
 	players		int,
