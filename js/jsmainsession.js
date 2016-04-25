@@ -1,15 +1,7 @@
 $(document).ready(function() {
-	//initializing the two main divs and sidemenu buttons:
+	//initializing the three main divs and sidemenu buttons:
 	var $scheduledDiv = $("#scheduled_games");
 	var $areagamesDiv = $("#area_games");
-<<<<<<< HEAD
-	
-	$("#scheduled_gamesbtn").addClass("btn-primary");
-	$("#area_gamesbtn").addClass("btn-info");
-	
-	$scheduledDiv.show();
-	$areagamesDiv.hide();
-=======
 	var $creategameDiv = $("#creategame");
 	
 	$("#scheduled_gamesbtn").addClass("btn-primary");
@@ -19,7 +11,6 @@ $(document).ready(function() {
 	$scheduledDiv.show();
 	$areagamesDiv.hide();
 	$creategameDiv.hide();
->>>>>>> origin/master
 
 	$("#scheduled_gamesbtn").on('click', function() {
 		$scheduledDiv.show();
@@ -28,12 +19,9 @@ $(document).ready(function() {
 		$areagamesDiv.hide();
 		$("#area_gamesbtn").removeClass("btn-primary");
 		$("#area_gamesbtn").addClass("btn-info");
-<<<<<<< HEAD
-=======
 		$creategameDiv.hide();
 		$("#creategamebtn").removeClass("btn-primary");
 		$("#creategamebtn").addClass("btn-info");
->>>>>>> origin/master
 	});
 	
 	$("#area_gamesbtn").on('click', function() {
@@ -43,9 +31,6 @@ $(document).ready(function() {
 		$areagamesDiv.show();
 		$("#area_gamesbtn").removeClass("btn-info");
 		$("#area_gamesbtn").addClass("btn-primary");
-<<<<<<< HEAD
-	});
-=======
 		$creategameDiv.hide();
 		$("#creategamebtn").removeClass("btn-primary");
 		$("#creategamebtn").addClass("btn-info");
@@ -63,7 +48,6 @@ $(document).ready(function() {
 		$("#creategamebtn").addClass("btn-primary");
 	});
 
->>>>>>> origin/master
 });
 
 

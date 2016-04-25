@@ -8,8 +8,8 @@ CREATE TABLE courts(
 	ID	int not null auto_increment,
 	courtname	varchar(40),
 	courtloc	varchar(40),
-	courtlat	int,
-	courtlong	int,
+	courtlat	float,
+	courtlong	float,
 	PRIMARY KEY(ID),
 	CHECK (ID > 0)
 );

@@ -53,7 +53,7 @@ $(document).ready(function() {
 	
 	function validate_registerpwd(){
 		var registerpwd = document.getElementById("registerpwd").value ;
-		if (registerpwd.length < 5 || registerpwd.length >20) {
+		if (registerpwd.length < 5 || registerpwd.length > 20) {
 			var errorregisterpwd = document.getElementById("registerpassworderror");
 			errorregisterpwd.innerHTML = "Please enter a valid password (5 char min, 20 char max)";
 			return false;
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		var skilllevel = document.getElementById("skilllevel").value ;
 		if (skilllevel.value == "Choose Skill Level") {
 			var errorskilllevel = document.getElementById("skilllevelerror");
-			errorskilllevel.innerHTML = "Please enter a valid skilllevel";
+			errorskilllevel.innerHTML = "Please enter a valid skill level";
 			return false;
 		}
 		return true;
@@ -73,9 +73,9 @@ $(document).ready(function() {
 	
 	function validate_registeremail(){
 		var registeremail = document.getElementById("registeremail").value ;
-		if (registeremail.length > 20) {
+		if (registeremail.length > 40) {
 			var errorregisteremail = document.getElementById("registeremailerror");
-			errorregisteremail.innerHTML = "Please enter a valid email (20 char max)";
+			errorregisteremail.innerHTML = "Please enter a valid email (40 char max)";
 			return false;
 		}
 		return true;
