@@ -50,10 +50,30 @@ $(document).ready(function() {
 		$("#contactbutton").addClass("btn-primary");
 	});
 	
-	//function to keep newsdiv the active div when feed button is pressed:
-	$("#getfeed").on('click', function() {
-		window.history.go(-1);
-	});
+	//function to keep contactdiv and newsdiv the active div when buttons are pressed:
+	/*document.getElementById('contactsubmitbtn').onclick = function() {
+   		$aboutDiv.hide();
+		$("#aboutbutton").removeClass("btn-primary");
+		$("#aboutbutton").addClass("btn-info");
+		$newsDiv.hide();
+		$("#newsbutton").removeClass("btn-primary");
+		$("#newsbutton").addClass("btn-info");
+		$contactDiv.show();
+		$("#contactbutton").removeClass("btn-info");
+		$("#contactbutton").addClass("btn-primary");
+	};
+	
+	document.getElementById('getfeed').onclick = function() {
+   		$aboutDiv.hide();
+		$("#aboutbutton").removeClass("btn-primary");
+		$("#aboutbutton").addClass("btn-info");
+		$newsDiv.show();
+		$("#newsbutton").removeClass("btn-info");
+		$("#newsbutton").addClass("btn-primary");
+		$contactDiv.hide();
+		$("#contactbutton").removeClass("btn-primary");
+		$("#contactbutton").addClass("btn-info");
+	};*/
 	
 	//coordinates to Boston College:
 	var myCenter = new google.maps.LatLng(42.339770, -71.166755);
@@ -82,25 +102,5 @@ $(document).ready(function() {
 
 		marker.setMap(map);
 	}
-	
-	//function to parse RSS feeds through JavaScript:
-	/*$("#getfeed").click(function() {
-		var urlLink = document.getElementsByName("feed");
-		
-		$.ajax ( {
-  			url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(urlLink),
-  			dataType : 'json',
-  			success  : function (data) {
-    			if (data.responseData.feed && data.responseData.feed.entries) {
-      				$.each(data.responseData.feed.entries, function (i, e) {
-        				console.log("------------------------");
-        				console.log("title      : " + e.title);
-        				console.log("author     : " + e.author);
-        				console.log("description: " + e.description);
-      				});
-    			}
-  			}
-		});
-	});*/
 
 });

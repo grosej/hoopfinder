@@ -31,14 +31,14 @@ body {
 	text-align: center;
 	padding: 10px 0px 0px 0px;
 	}
-#mapAPI, #scheduled_games, #area_games, #see_friends, #schedule_game_form {
+#mapAPI, #scheduled_games, #area_games, #creategame {
 	position: relative;
 	right: 30px;
 	float: right;
 	background-color: #dddddd;
 	opacity: 0.8;
 	}
-#mapcontainer, #homecontainer, #gameformcontainer {
+#mapcontainer, #homecontainer {
 	padding: 10px 0px 10px 0px;
 	}
 /* dropdown menu button: */

@@ -1,16 +1,13 @@
-<?php
-	include('dbconn.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Hoop Finder  |  Welcome</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/csslogin.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/jslogin.js"></script>
 </head>
 <body>
@@ -24,7 +21,7 @@
   				<button id="menubutton" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><h1>More</h1>
   				<span class="caret"></span></button>
   				<ul id="menulist" class="dropdown-menu">
-    				<li><a href="login.html">Welcome</a></li>
+    				<li><a href="login.php">Welcome</a></li>
     				<li><a href="about.php">About</a></li>
     				<li><a href="adminlogin.html">Admin Login</a></li>
   				</ul>
@@ -76,76 +73,55 @@
   				</div>
   			</div>
   			<div id="logindiv" class="form-display col-sm-4">
-				<form id="loginform" method="post" role="form">
+  			<?php
+  				display_loginform();
+  				
+  				function display_loginform() {
+  					$loginusername = isset( $_POST['username'] ) ? $_POST['username'] : "";
+  					$loginpwd = isset( $_POST['password'] ) ? $_POST['password'] : "";
+  			?>
+				<form id="loginform" method="post" role="form" action="handlerlogin.php">
 				<fieldset id="loginfield">
 					<p>Don't have an account? <button id="signup" type="button" class="btn btn-link">Sign up here</button></p>
   					<div class="form-group">
     					<label for="loginusername">Username:</label>
-    					<input type="text" class="form-control" id="loginusername" name="username" placeholder="Enter username" required>
+    					<input type="text" class="form-control" id="loginusername" name="username" value="<?php echo $loginusername ?>" minlength="5" maxlength="20" placeholder="Enter username" required>
   					</div>
   					<div id="loginnameerror"></div>
   					<div class="form-group">
     					<label for="loginpwd">Password:</label>
-    					<input type="password" class="form-control" id="loginpwd" name="password" placeholder="Enter password" required>
+    					<input type="password" class="form-control" id="loginpwd" name="password" value="<?php echo $loginpwd ?>" minlength="5" maxlength="20" placeholder="Enter password" required>
   					</div>
   					<div id="loginpassworderror"></div>
   					<input type="hidden" name="op1" value="loginsubmit" />
   					<button id="loginsubmit" name="loginsubmit" type="submit" class="btn btn-danger pull-right">Log In</button>
   					<br />
   					<br />
-  					<p>Forgot your password? <button id="pwdreset" name="pwdreset" type="button" class="btn btn-link">Reset it here</button></p>
+  					<p>Forgot your password? <button id="pwdreset" name="pwdreset" type="button" data-toggle="modal" data-target="#myModal" class="btn btn-link">Reset it here</button></p>
 				</fieldset>
 				</form>
-				<?php
-				if ( isset( $_POST['op1'] ) ) {
-					handle_validateform( $_POST['op1'] );
-				}
-				
-				function handle_validateform( $op ){
-					$entered_username   = $_POST['username'];	
-					$entered_password = $_POST['password'];
-		
-					switch ( $op ) {
-						case "loginsubmit":
-							validate_user( $entered_username, $entered_password) ;	
-							break;
-						default:
-							die( "Invalid operation" );
-					}	
-				}
-				
-				function validate_user( $name, $pw ){
-					$encode = sha1( $pw );
-					$query = "SELECT * FROM `user_info` WHERE username='$name' AND password='$encode'";
-					$dbc = connect_to_db( "morrisht" );
-					$result = perform_query( $dbc, $query );
-					$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
-	
-					if ( mysqli_num_rows( $result ) == 0) {
-					?>	<div id="validatefailure" class="col-sm-12 alert alert-danger">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>Oops!</strong> Validate Failure: <?php echo "$query" ?>
-						</div>
-					<?php } else {
-					?>	<div id="validatesucces" class="col-sm-12 alert alert-success">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  							<strong>Success!</strong> Validate Successful: <?php echo "$query" ?>
-						</div>
-					<?php }
-				} ?>
+				<?php } ?>
 			</div>
   			<div id="registerdiv" class="form-display col-sm-4">
-  				<form id="registerform" method="post" role="form">
+  			<?php
+  				display_registerform();
+  				
+  				function display_registerform() {
+  					$registerusername = isset( $_POST['username'] ) ? $_POST['username'] : "";
+  					$registerpwd = isset( $_POST['password'] ) ? $_POST['password'] : "";
+  					$registeremail = isset( $_POST['email'] ) ? $_POST['email'] : "";
+  			?>
+  				<form id="registerform" method="post" role="form" action="handlerlogin.php">
   				<fieldset id="registerfield">
   					<p>Already have an account? <button id="signin" type="button" class="btn btn-link">Sign in</button></p>
   					<div class="form-group">
     					<label for="registerusername">Username:</label>
-    					<input type="text" class="form-control" id="registerusername" name="username" placeholder="Create username" required>
+    					<input type="text" class="form-control" id="registerusername" name="username" value="<?php echo $registerusername ?>" minlength="5" maxlength="20" placeholder="Create username" required>
   					</div>
   					<div id="registernameerror"></div>
   					<div class="form-group">
     					<label for="registerpwd">Password:</label>
-    					<input type="password" class="form-control" id="registerpwd" name="password" placeholder="Create password" required>
+    					<input type="password" class="form-control" id="registerpwd" name="password" value="<?php echo $registerpwd ?>" minlength="5" maxlength="20" placeholder="Create password" required>
   					</div>
   					<div id="registerpassworderror"></div>
   					<div class="form-group">
@@ -157,61 +133,17 @@
   							<option id="advanced" name="advanced" value="Advanced">Advanced</option>
   						</select>
   					</div>
+  					<div id="skilllevelerror"></div>
   					<div class="form-group">
     					<label for="registeremail">Email:</label>
-    					<input type="email" class="form-control" id="registeremail" name="email" placeholder="Enter your email" required>
+    					<input type="email" class="form-control" id="registeremail" name="email" value="<?php echo $registeremail ?>" maxlength="40" placeholder="Enter your email" required>
   					</div>
   					<div id="registeremailerror"></div>
   					<input type="hidden" name="op2" value="registersubmit" />
   					<button id="registersubmit" name="registersubmit" type="submit" class="btn btn-danger pull-right">Register</button>
 				</fieldset>
 				</form>
-				<?php
-				if ( isset( $_POST['op2'] ) ) {
-					handle_registerform( $_POST['op2'] );
-					?>
-					<script>
-						var $loginDiv = $("#logindiv");
-						var $registerDiv = $("#registerdiv");
-	
-						$loginDiv.hide();
-						$registerDiv.show();
-					</script>
-					<?php
-				}
-				
-				function handle_registerform( $op ){
-					$entered_username   = $_POST['username'];	
-					$entered_password = $_POST['password'];
-					$entered_email = $_POST['email'];
-					$entered_skill = $_POST['skilllevel'];
-		
-					switch ( $op ) {
-						case "registersubmit":
-							insert_user( $entered_username, $entered_password, $entered_email, $entered_skill );
-							break;
-						default:
-							die( "Invalid operation" );
-					}	
-				}
-				
-				function insert_user( $name, $pw, $email, $skill ){
-					$encode = sha1( $pw );
-					$query="INSERT INTO user_info(username, password, email, skilllevel) VALUES ('$name', '$encode', '$email', '$skill')";
-					$dbc = connect_to_db( "morrisht" );
-					$result = perform_query( $dbc, $query );
-					if ( !$result ) {
-					?>	<div id="registerfailure" class="col-sm-12 alert alert-danger">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-							<strong>Oops!</strong> Register Failure: <?php echo "$query" ?>
-						</div>
-					<?php } else {
-					?>	<div id="registersucces" class="col-sm-12 alert alert-success">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  							<strong>Success!</strong> Register Successful: <?php echo "$query" ?>
-						</div>
-					<?php }
-				} ?>
+				<?php } ?>
 			</div>
 		</div>
 		<div id="footer" class="row">
@@ -220,5 +152,30 @@
 			</div>
 		</div>
 	</div><!-- .container -->
+<!-- Modal -->	
+<div id="myModal" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+    	<div class="modal-content">
+      		<div class="modal-header">
+      			<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<h4 class="modal-title">Reset Password</h4>
+      		</div>
+      		<div class="modal-body">
+        		<form id="resetpwd_form" method="post" role="form" action="handlerlogin.php">
+        			<div class="form-group">
+    					<label for="resetpwdemail">Email:</label>
+    					<input type="email" class="form-control" id="resetpwdemail" name="resetpwdemail" maxlength="40" placeholder="Enter your email" required>
+  					</div>
+  					<input type="hidden" name="op3" value="resetpwdsubmit" />
+  					<button id="resetpwdsubmit" name="resetpwdsubmit" type="submit" class="btn btn-danger">Reset Password</button>
+        		</form>
+      		</div>
+      		<br />
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      		</div>
+    	</div>
+  	</div>
+</div>
 </body>
 </html>

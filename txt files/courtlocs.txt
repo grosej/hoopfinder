@@ -60,21 +60,21 @@
 	Lat: 42.339725	Long: -71.115226
 31. Name: Hobart Park				  	Location: 75 Hobart Street, Boston, MA 02135
 	Lat: 42.355698	Long: -71.161236
-32. Name: Cabot Park				 	Location: 3 Parkview Ave, Newton, MA 02460
-	Lat: 42.350232 	Long: -71.197861
+32. Name: Castle Square Parks			Location: 131 Shawmut Avenue, Boston, MA 02118
+	Lat: 42.345660 	Long: -71.068066
 33. Name: Boylston Street Playground  	Location: 19 Leverett Street, Brookline, MA 02445
 	Lat: 42.331163	Long: -71.121895
-34. Name:   	Location: 
-	Lat: 	Long:
-35. Name:   	Location: 
-	Lat: 	Long: 
-36. Name:   	Location: 
-	Lat: 	Long:
-37. Name:   	Location: 
-	Lat: 	Long:
-38. Name:   	Location: 
-	Lat: 	Long:
-39. Name:   	Location: 
-	Lat: 	Long:
-40. Name:   	Location: 
-	Lat: 	Long:
+34. Name: Clark Playground			 	Location: 118 Franklin Street, Brookline, MA 02445
+	Lat: 42.327450	Long: -71.125884
+35. Name: Clement G Morgan Park		 	Location: 60 Columbia Street, Cambridge, MA 02139
+	Lat: 42.364977	Long: -71.098667
+36. Name: Filippello Park  				Location: 203 Grove Street, Watertown, MA 02472
+	Lat: 42.366316	Long: -71.152135
+37. Name: How Park					  	Location: 53 Bacon Street, Watertown, MA 02472
+	Lat: 42.368161	Long: -71.194071
+38. Name: Penniman Road Play Area 	 	Location: 43 Penniman Road, Boston, MA 02134
+	Lat: 42.355262	Long: -71.136983
+39. Name: Titus Sparrow Park		  	Location: 200 W Newton Street, Boston, MA 02118
+	Lat: 42.343705	Long: -71.079653
+40. Name: Sweeney Playground		 	Location: 159 Gold Street, Boston, MA 02127
+	Lat: 42.337133 	Long: -71.051518
